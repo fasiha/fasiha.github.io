@@ -1,0 +1,309 @@
+<!doctype html>
+<head><meta charset="utf-8" />
+<title>Insight ≠ Numbers</title>
+<link href="/atom.xml" type="application/atom+xml" rel="alternate" />
+<meta name="description" content="Code – Math – Food – Family. By Ahmed Fasih." />
+<meta name="twitter:card" value="summary">
+<meta property="og:title" content="Insight ≠ Numbers" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="index.html" />
+<meta property="og:image" content="https://fasiha.github.io/glen-helen.jpg" />
+<meta property="og:description" content="Code – Math – Food – Family. By Ahmed Fasih." />
+<style>@media print {
+  *,
+  *:before,
+  *:after {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: "";
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  thead {
+    display: table-header-group;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  img {
+    max-width: 100% !important;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+  .parallax {
+    background-attachment: scroll;
+  }
+}
+
+pre,
+code {
+  font-family: Menlo, Monaco, Consolas, Inconsolata, "Andale Mono", "Fira Code", "Lucida Console", "Lucida Sans Typewriter", "Courier New", monospace;
+}
+
+pre {
+  padding: .5rem;
+  line-height: 1.25;
+  overflow-x: scroll;
+}
+
+a,
+a:visited {
+  color: #3498db;
+}
+
+a:hover,
+a:focus,
+a:active {
+  color: #2980b9;
+}
+
+.modest-no-decoration {
+  text-decoration: none;
+}
+
+html {
+  font-size: 12px;
+}
+
+@media screen and (min-width: 32rem) and (max-width: 48rem) {
+  html {
+    font-size: 15px;
+  }
+}
+
+@media screen and (min-width: 48rem) {
+  html {
+    font-size: 16px;
+  }
+}
+
+body {
+  line-height: 1.85;
+}
+
+p,
+.modest-p {
+  font-size: 1rem;
+  margin-bottom: 1.3rem;
+}
+
+h1,
+.modest-h1,
+h2,
+.modest-h2,
+h3,
+.modest-h3,
+h4,
+.modest-h4 {
+  margin: 1.414rem 0 .5rem;
+  font-weight: inherit;
+  line-height: 1.42;
+}
+
+h1,
+.modest-h1 {
+  margin-top: 0;
+  font-size: 3.998rem;
+}
+
+h2,
+.modest-h2 {
+  font-size: 2.827rem;
+}
+
+h3,
+.modest-h3 {
+  font-size: 1.999rem;
+}
+
+h4,
+.modest-h4 {
+  font-size: 1.414rem;
+}
+
+h5,
+.modest-h5 {
+  font-size: 1.121rem;
+}
+
+h6,
+.modest-h6 {
+  font-size: .88rem;
+}
+
+small,
+.modest-small {
+  font-size: .707em;
+}
+
+/* https://github.com/mrmrs/fluidity */
+
+img,
+canvas,
+iframe,
+video,
+svg,
+select,
+textarea {
+  max-width: 100%;
+}
+
+html {
+  font-size: 18px;
+  max-width: 100%;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  color: #444;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  margin: 0 auto;
+  max-width: 48rem;
+  line-height: 1.45;
+  padding: 0 .25rem .25rem;
+}
+
+h1,
+h2,
+h3 {
+  border-bottom: 2px solid #fafafa;
+  margin-bottom: 1.15rem;
+  padding-bottom: .5rem;
+  text-align: center;
+}
+
+blockquote {
+  border-left: 8px solid #fafafa;
+  padding: 0.1em 1rem;
+}
+
+pre,
+code {
+  background-color: #fafafa;
+}
+
+figure {
+  position: relative;
+  text-align: center;
+}
+figcaption {
+  color: #999;
+  font-size: 0.9em;
+  margin-top: 0.5em;
+}
+
+/* https://css-tricks.com/full-width-containers-limited-width-parents/ */
+.full-width {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+.no-top {
+  margin-top: 0px;
+  padding-top:0px;
+}
+ul.top-nav {
+  padding-left: 0;
+}
+ul.top-nav li {
+  display: inline;
+  list-style-type: none;
+  padding-right: 1em;
+}
+table{
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+table th, table td{
+  border: 1px solid #eee;
+  padding: 6px 13px;
+}
+table tr:nth-child(2n) {
+  background-color: #f6f8f6;
+}
+div.img-svg{position: relative; display: inline-block;}
+div.img-svg img{display: block;max-width: 100%; height: auto;}
+div.img-svg svg{position:absolute; margin:0; padding:0; top:0; left:0;}
+svg.overlay {opacity:0}
+svg.overlay:hover {opacity:1}
+</style>
+
+</head>
+<figure class="full-width no-top"><img src="glen-helen.jpg"></figure><h1>Insight ≠ Numbers</h1><h2 id="all-posts">All posts</h2>
+<ul>
+<li><a href="/post/beyond-neophilia/">Beyond neophilia</a> (2018/6/27, history)</li>
+<li><a href="/post/wip/">Works in progress</a> (2017/6/2, meta)</li>
+<li><a href="/post/mudder/">Announcing: Mudder.js</a> (2017/6/1, tech/math)</li>
+<li><a href="/post/japanese-study-books/">Japanese study books</a> (2017/5/21, study)</li>
+<li><a href="/post/co-housing/">Co-housing</a> (2017/5/6, modernity)</li>
+<li><a href="/post/ebisu/">Announcing: Ebisu and Ebisu.js</a> (2017/4/28, tech)</li>
+<li><a href="/post/kanjibreak/">Announcing: KanjiBreak</a> (2017/2/21, tech/study)</li>
+<li><a href="/post/rust-slays-brittle-indexing/">How Rust slays brittle indexing logic.</a> (2017/1/5, tech)</li>
+<li><a href="/post/utf8-refresher/">A UTF-8 mini-refresher</a> (2016/12/30, tech)</li>
+<li><a href="/post/dissimilarity/">Conditional probability and the criterion of dissimilarity</a> (2016/10/22, math/history)</li>
+<li><a href="/post/ruby/">Make Ruby HTML tags</a> (2016/10/13, tech)</li>
+<li><a href="/post/ads-b/">Track planes with a USB dongle</a> (2016/8/31, tech)</li>
+<li><a href="/post/spherical-cap/">Random points on a spherical cap</a> (2016/8/19, math/tech)</li>
+<li><a href="/post/replicating-matlab-columns/">Measure your code, or, Replicating columns in Matlab</a> (2016/5/31, tech)</li>
+<li><a href="/post/texshade/">Texture-shaded Globe</a> (2015/12/14, tech)</li>
+</ul>
+<p>(<a href="/atom.xml">Feed</a>)</p>
+<h2 id="about-ahmed-fasih">About Ahmed Fasih</h2>
+<p>The blog title comes from Professor Richard Hamming’s motto, “The purpose of computation is insight, not numbers” (<a href="http://www.siam.org/news/news.php?id=893">SIAM</a>).</p>
+<p>I sling JavaScript, TypeScript, Elm, C, C++, Julia, Python, and Matlab for fun and profit. After enjoying programming for years, I discovered applied math in mid-undergrad, and through various adventures in grad school (ABD in electrical engineering) and industry, I wound up learning a lot about signal processing, machine learning, and scientific computing.</p>
+<p>When I’m not writing code or applying math, I enjoy studying the languages and literatures of the Japanese, Chinese, Greek, and Indian civilizations.</p>
+<p>Unless otherwise noted, this blog’s contents are dedicated to the public domain <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a>.</p>
+<h2 id="contact">Contact</h2>
+<p>I’m a “he/him”, with no PhD or academic post, so don’t “Doctor” or “Professor” me. 👋! Since this website has absolutely zero visitor tracking or analytics, I won’t know who you are unless you write to me, so please do!</p>
+<p>Electronic mail will always work: (ahmed) ΑΤ (aldebrn.me). 🤙</p>
+<p><a href="https://keybase.io/aldebrn">Keybase</a> me securely. 🐻</p>
+<p>I toot on <a href="https://octodon.social/@22">Mastodon</a>. 🐘</p>
+<p>My code repos on <a href="https://github.com/fasiha">GitHub</a>. 🦉</p>
+<p>My code Q&amp;A on <a href="https://stackoverflow.com/users/500207/ahmed-fasih">StackOverflow</a>. 🐒</p>
+<p>I review books after finishing them on <a href="https://www.goodreads.com/user/show/25471547-ahmed">GoodReads</a>. 🐲</p>
+<p>(I used to be active on the <a href="http://forum.koohii.com/user-4838.html">Koohii</a> forum, <a href="https://www.memrise.com/user/aldebrn/courses/learning/">Memrise</a>, <a href="https://twitter.com/gratidue">Twitter</a>, and <a href="https://plus.google.com/107217279194013656387">G+</a>.)</p>
+<h2 id="acknowledgements">Acknowledgements</h2>
+<p>Pandoc is good. <a href="https://markdowncss.github.io/modest/">Modest</a> CSS is great. <a href="https://github.com/SVG-Edit/svgedit">SVG-Edit</a> is amazing. We also use Klipse for interactive code execution, highlight.js for syntax highlighting, JSDOM for server-side rendering as much as we can, and MathJax and mathjax-node-page for equations.</p>
+<p>(Image credits: banner—self, at Glen Helen Nature Preserve, Yellow Springs, Ohio, USA. All rights reserved.)</p>
