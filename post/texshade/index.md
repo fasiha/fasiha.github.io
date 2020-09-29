@@ -8,6 +8,8 @@ title: 'Texture-shaded Globe'
 
 **tl;dr**: visit the [Texture-Shaded Globe webapp](https://fasiha.github.io/texshade-cesium-viewer/) and play around.
 
+**Coders** [Texshade](https://fasiha.github.io/texshade-py/) is my Python implementation of a memory-efficient algorithm.
+
 ## Let’s start with six examples.
 
 ### Japan: 566 km
