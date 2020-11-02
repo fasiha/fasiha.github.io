@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://fasiha.github.io/</id>
     <title>Insight≠Numbers</title>
-    <updated>2018-06-27T13:59:43Z</updated>
+    <updated>2020-11-02T02:49:42Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Ahmed Fasih</name>
@@ -20,10 +20,24 @@
     </category>
     <category term="modernity">
     </category>
+    <category term="risk">
+    </category>
     <category term="study">
     </category>
     <category term="tech">
     </category>
+    <entry>
+        <title type="html"><![CDATA[Learning about risk, for kids and grownups]]></title>
+        <id>https://fasiha.github.io/post/risk-for-kids-and-grownups/</id>
+        <link href="https://fasiha.github.io/post/risk-for-kids-and-grownups/">
+        </link>
+        <updated>2020-11-02T02:49:42Z</updated>
+        <summary type="html"><![CDATA[Personal experiences teaching kids and grownups about risk through games]]></summary>
+        <author>
+            <name>Ahmed Fasih</name>
+            <uri>https://fasiha.github.io//#contact</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Beyond neophilia]]></title>
         <id>https://fasiha.github.io/post/beyond-neophilia/</id>

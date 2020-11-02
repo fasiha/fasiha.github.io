@@ -356,7 +356,7 @@ svg.overlay:hover {opacity:1}
 <p>There are two separate ADS-B radio bands: the <em>commercial aviation</em> (CA) is at 1090 MHz while the <em>general aviation</em> (GA) is at 978 MHz. If I can be permitted a gross generalization—the former corresponds to big commercial jets and the latter to small private aircraft.</p>
 <p>Because ADS-B is designed to democratize airspace situational awareness (in contrast to the older setup, like from films, where a central air-traffic controller is coordinating all these aircraft that can’t see each other), we can buy cheap RF receivers to pick up and decode the messages being broadcast by aircraft and ground towers to get our own picture of the local airspace. This rabbit hole actually goes quite deep: FlightAware.com has built a business on crowdsourced ADS-B receivers. They will give you a networked ADS-B kit called <a href="https://flightaware.com/adsb/flightfeeder/">FlightFeeder</a>, for free, if you live in an area of sparse coverage.</p>
 <p>Here’s one way to receive, log, and real-time visualize the traffic on either of these ADS-B bands using a USB radio receiver and some open-source software on a Mac.</p>
-<h2 id="hardware-base-software-setup">Hardware &amp; base software setup</h2>
+<h2 id="hardware--base-software-setup">Hardware &amp; base software setup</h2>
 <p>Buy RTL-SDR. <a href="https://www.amazon.com/dp/B011HVUEME">$25 kit on Amazon</a>.</p>
 <p>Optional: buy antennas. <a href="https://www.amazon.com/gp/product/B01EJUM83S">$20 Stratux DMURRAY14 kit</a>.</p>
 <p>Install <a href="http://brewformulas.org/Librtlsdr"><code>librtlsdr</code></a>.</p>
@@ -373,7 +373,7 @@ $ make -j4 # omit if you will only do dump978/GA</code></pre>
 <pre class="nohighlight"><code>$ mkdir public_html/data</code></pre>
 <p>Then start a webserver that hosts the <code>public_html</code> directory. You have many choices but here’s a really simple one:</p>
 <pre class="nohighlight"><code>$ cd public_html &amp;&amp; python -m SimpleHTTPServer 8090</code></pre>
-<p>This uses Python2 to serve the current directory’s contents: browse to <a href="http://127.0.0.1:8090/gmap.html" class="uri">http://127.0.0.1:8090/gmap.html</a> to see an OpenStreetMap.</p>
+<p>This uses Python2 to serve the current directory’s contents: browse to <a href="http://127.0.0.1:8090/gmap.html">http://127.0.0.1:8090/gmap.html</a> to see an OpenStreetMap.</p>
 <p>Now, an application like dump1090 or dump978 can put data inside this directory and the map will display it.</p>
 <h3 id="run-log-and-visualize-dump1090">Run, log, and visualize dump1090</h3>
 <p>Finally, launch dump1090 and pipe its output to disk for logging:</p>
@@ -439,7 +439,7 @@ $ mkdir -p public_html/data</code></pre>
 <h3 id="start-external-webserver-1">Start external webserver</h3>
 <p>Following the same process as dump1090, we can start a webserver using plain Python2. We will choose a different port to avoid conflicts with the dump1090 webapp.</p>
 <pre class="nohighlight"><code>$ cd public_html &amp;&amp; python -m SimpleHTTPServer 8978</code></pre>
-<p>Open a browser tab to <a href="http://127.0.0.1:8978/gmap.html" class="uri">http://127.0.0.1:8978/gmap.html</a>.</p>
+<p>Open a browser tab to <a href="http://127.0.0.1:8978/gmap.html">http://127.0.0.1:8978/gmap.html</a>.</p>
 <h3 id="run-log-and-visualize-dump978">Run, log, and visualize dump978</h3>
 <p>dump978 is a little different from dump1090, in that dump978 accepts binary samples output by <code>rtl_sdr</code>, rather than doing this behind-the-scenes:</p>
 <pre class="nohighlight"><code>$ rtl_sdr -f 978000000 -s 2083334 - | ./dump978 | tee --append log.txt | ./uat2json public_html/data</code></pre>
