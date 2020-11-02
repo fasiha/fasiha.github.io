@@ -6,7 +6,7 @@ tags: [risk]
 title: 'Learning about risk, for kids and grownups'
 ---
 
-[Aaron Brown](https://www.eraider.com/), a poker–Wall Street type, in his 2006 *The Poker Face of Wall Street*, quotes John Aglialoro (a fellow poker–Wall Street type) who reminisced about learning poker from his grandmother: "He recalls losing the first time he played her, and expecting her to give the money back. She didn’t… Good poker players learn how to make the tough folds and when to pay to see more cards" (page 175). Years ago, Brown's book talks a lot about having to pay for *information* and for *mistakes*, and it convinced me of the benefits of (1) learning about risk, and (2) using poker as a vehicle to do so.
+[Aaron Brown](https://www.eraider.com/), a poker–Wall Street type, in his 2006 *The Poker Face of Wall Street*, quotes John Aglialoro (a fellow poker–Wall Street type) who reminisced about learning poker from his grandmother: "He recalls losing the first time he played her, and expecting her to give the money back. She didn’t… Good poker players learn how to make the tough folds and when to pay to see more cards" (page 175). Brown's book emphasizes this notion of having to pay for *information* and for *mistakes*, and it convinced me of the benefits of (1) learning about risk, and (2) using poker as a vehicle to do so.
 
 But it wasn't until I had kids and a relative got us the [Dragonwood](https://gamewright.com/product/dragonwood) boardgame that I saw how natural a process this could be.
 
