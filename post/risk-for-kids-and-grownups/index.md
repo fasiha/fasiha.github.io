@@ -40,4 +40,6 @@ So *Call Faye* does the same thing as the page of numbers did for Dragonwood, ex
 
 Go [check it out](https://callfaye.glitch.me). Grab some family members, pick a table name for yourselves and get everyone to type it in, and start playing. Let's learn risk, kids and grownups!
 
+> By the way, I picked ⛳️💎💓💐 to represent club, diamond, heart, and spade because clubs remind me of golf and spades of gardening. And. The app is named after the great seventy-seven-year-old gambler Faye Valentine, and the "Call Me Call Me" song on the *Cowboy Bebop* soundtrack.
+
 (Banner image: a crop from Johannes Vingboons, *Gezicht op Nieuw Amsterdam* (View of New Amsterdam), 1664. [Wikimedia](https://commons.wikimedia.org/wiki/File:GezichtOpNieuwAmsterdam.jpg))
