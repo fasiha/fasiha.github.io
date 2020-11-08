@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://fasiha.github.io/</id>
     <title>Insight≠Numbers</title>
-    <updated>2020-11-02T02:49:42Z</updated>
+    <updated>2020-11-08T03:01:01Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Ahmed Fasih</name>
@@ -12,6 +12,8 @@
     <subtitle>A blog by Ahmed Fasih</subtitle>
     <logo>https://fasiha.github.io/glen-helen.jpg</logo>
     <rights>Unless otherwise noted, released into the public domain under CC0.</rights>
+    <category term="finance">
+    </category>
     <category term="history">
     </category>
     <category term="math">
@@ -26,6 +28,18 @@
     </category>
     <category term="tech">
     </category>
+    <entry>
+        <title type="html"><![CDATA[A look at S&P 500's real excess return over Treasuries]]></title>
+        <id>https://fasiha.github.io/post/excess-returns/</id>
+        <link href="https://fasiha.github.io/post/excess-returns/">
+        </link>
+        <updated>2020-11-08T03:01:01Z</updated>
+        <summary type="html"><![CDATA[Conventional wisdom assures us to buy low-cost diversified mutual funds for retirement savings. Let's take a look at what that meant over the last century and more.]]></summary>
+        <author>
+            <name>Ahmed Fasih</name>
+            <uri>https://fasiha.github.io//#contact</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Learning about risk, for kids and grownups]]></title>
         <id>https://fasiha.github.io/post/risk-for-kids-and-grownups/</id>
