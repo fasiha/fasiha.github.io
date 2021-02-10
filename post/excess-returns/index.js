@@ -20,7 +20,6 @@
   let xaxis = {title: {text: 'Horizon end date'}};
   let yaxis = {title: {text: 'Annualized rate of return (%)'}};
 
-  Plotly.plot(document.getElementById('excess-20'), [traces[2]], {title:title.text+ ', 40 years', xaxis, yaxis});
   Plotly.plot(document.getElementById('excess-all'), traces, {title, xaxis, yaxis});
 })();
   
