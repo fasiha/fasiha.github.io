@@ -17,11 +17,9 @@ Unless otherwise noted, this blog’s contents are dedicated to the public domai
 
 ## Contact
 
-I’m a “he/him”, with no PhD or academic post, so don’t “Doctor” or “Professor” me. 👋! Since this website has absolutely zero visitor tracking or analytics, I won’t know who you are unless you write to me, so please do!
+I’m a “he/him” (they/them ok!), with no PhD or academic post, so don’t “Doctor” or “Professor” me. 👋! Since this website has absolutely zero visitor tracking or analytics, I won’t know who you are unless you write to me, so please do!
 
 Electronic mail will always work: (ahmed) ΑΤ (aldebrn.me). 🤙
-
-[Keybase](https://keybase.io/aldebrn) me securely. 🐻
 
 I toot on [Mastodon](https://octodon.social/@22). 🐘
 
@@ -31,7 +29,9 @@ My code Q&A on [StackOverflow](https://stackoverflow.com/users/500207/ahmed-fasi
 
 I review books after finishing them on [GoodReads](https://www.goodreads.com/user/show/25471547-ahmed). 🐲
 
-(I used to be active on the [Koohii](http://forum.koohii.com/user-4838.html) forum, [Memrise](https://www.memrise.com/user/aldebrn/courses/learning/), [Twitter](https://twitter.com/gratidue), and [G+](https://plus.google.com/107217279194013656387).)
+I have to keep up with y’all on [Memrise](https://www.memrise.com/user/aldebrn/courses/learning/). 🦋
+
+(I seem to have a [Twitter](https://twitter.com/gratidue) and a [LinkedIn](https://www.linkedin.com/in/ahmed-fasih-006a1b1b3/).)
 
 ## Acknowledgements
 
