@@ -196,6 +196,7 @@ function buildOneMarkdown(meta, prevMeta, nextMeta, metas) {
 
   Promise.all([ headHtmlPromise, postIndexP, footPromise ])
       .then(([ [ head, html ], postIndex, foothtml ]) => {
+        console.log('done '+ outfile);
         writeFileAsync(outfile, '')
             .then(() => appendFileAsync(outfile, head))
             .then(() => appendFileAsync(outfile, postIndex))
