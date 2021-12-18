@@ -17,7 +17,7 @@ Unless otherwise noted, this blog’s contents are dedicated to the public domai
 
 ## Contact
 
-I’m a “he/him” (they/them ok!), with no PhD or academic post, so don’t “Doctor” or “Professor” me. 👋! Since this website has absolutely zero visitor tracking or analytics, I won’t know who you are unless you write to me, so please do!
+I’m a “he/him” (they/them ok!). 👋! Since this website has absolutely zero visitor tracking or analytics, I won’t know who you are unless you write to me, so please do!
 
 Electronic mail me, ***(ahmed) ΑΤ (aldebrn.me)***. 🤙 (Though, nota bene, if you ask me to work at your company, I may not respond—it sometimes takes a lot of energy to figure out how to say “no” and I sometimes can’t; also I might complain about your interview [process](https://gist.github.com/fasiha/496d78a3ce9357cdec0a18f919407d2e))
 
