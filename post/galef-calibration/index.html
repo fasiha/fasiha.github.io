@@ -1,0 +1,483 @@
+<!doctype html>
+<head><meta charset="utf-8" />
+<title>Announcing: Devastate—calibrating uncertainty via trivia</title>
+<link href="/atom.xml" type="application/atom+xml" rel="alternate" />
+<meta name="description" content="A web version of the exercise proposed by Julia Galef in “The Scout Mindset”" />
+<meta name="twitter:card" value="summary">
+<meta property="og:title" content="Announcing: Devastate—calibrating uncertainty via trivia" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="post/galef-calibration/index.html" />
+<meta property="og:image" content="https://fasiha.github.io/post/galef-calibration/bloomsberries-2005-wto.jpg" />
+<meta property="og:description" content="A web version of the exercise proposed by Julia Galef in “The Scout Mindset”" />
+<style>@media print {
+  *,
+  *:before,
+  *:after {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: "";
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  thead {
+    display: table-header-group;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  img {
+    max-width: 100% !important;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+  .parallax {
+    background-attachment: scroll;
+  }
+}
+
+pre,
+code {
+  font-family: Menlo, Monaco, Consolas, Inconsolata, "Andale Mono", "Fira Code", "Lucida Console", "Lucida Sans Typewriter", "Courier New", monospace;
+}
+
+pre {
+  padding: .5rem;
+  line-height: 1.25;
+  overflow-x: scroll;
+}
+
+a,
+a:visited {
+  color: #3498db;
+}
+
+a:hover,
+a:focus,
+a:active {
+  color: #2980b9;
+}
+
+.modest-no-decoration {
+  text-decoration: none;
+}
+
+html {
+  font-size: 12px;
+}
+
+@media screen and (min-width: 32rem) and (max-width: 48rem) {
+  html {
+    font-size: 15px;
+  }
+}
+
+@media screen and (min-width: 48rem) {
+  html {
+    font-size: 16px;
+  }
+}
+
+body {
+  line-height: 1.85;
+}
+
+p,
+.modest-p {
+  font-size: 1rem;
+  margin-bottom: 1.3rem;
+}
+
+h1,
+.modest-h1,
+h2,
+.modest-h2,
+h3,
+.modest-h3,
+h4,
+.modest-h4 {
+  margin: 1.414rem 0 .5rem;
+  font-weight: inherit;
+  line-height: 1.42;
+}
+
+h1,
+.modest-h1 {
+  margin-top: 0;
+  font-size: 3.998rem;
+}
+
+h2,
+.modest-h2 {
+  font-size: 2.827rem;
+}
+
+h3,
+.modest-h3 {
+  font-size: 1.999rem;
+}
+
+h4,
+.modest-h4 {
+  font-size: 1.414rem;
+}
+
+h5,
+.modest-h5 {
+  font-size: 1.121rem;
+}
+
+h6,
+.modest-h6 {
+  font-size: .88rem;
+}
+
+small,
+.modest-small {
+  font-size: .707em;
+}
+
+/* https://github.com/mrmrs/fluidity */
+
+img,
+canvas,
+iframe,
+video,
+svg,
+select,
+textarea {
+  max-width: 100%;
+}
+
+html {
+  font-size: 18px;
+  max-width: 100%;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  color: #444;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  margin: 0 auto;
+  max-width: 48rem;
+  line-height: 1.45;
+  padding: 0 .25rem .25rem;
+}
+
+h1,
+h2,
+h3 {
+  border-bottom: 2px solid #fafafa;
+  margin-bottom: 1.15rem;
+  padding-bottom: .5rem;
+  text-align: center;
+}
+
+blockquote {
+  border-left: 8px solid #fafafa;
+  padding: 0.1em 1rem;
+}
+
+pre,
+code {
+  background-color: #fafafa;
+}
+
+figure {
+  position: relative;
+  text-align: center;
+}
+figcaption {
+  color: #999;
+  font-size: 0.9em;
+  margin-top: 0.5em;
+}
+
+/* https://css-tricks.com/full-width-containers-limited-width-parents/ */
+.full-width {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+.no-top {
+  margin-top: 0px;
+  padding-top:0px;
+}
+ul.top-nav {
+  padding-left: 0;
+}
+ul.top-nav li {
+  display: inline;
+  list-style-type: none;
+  padding-right: 1em;
+}
+table{
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+table th, table td{
+  border: 1px solid #eee;
+  padding: 6px 13px;
+}
+table tr:nth-child(2n) {
+  background-color: #f6f8f6;
+}
+div.img-svg{position: relative; display: inline-block;}
+div.img-svg img{display: block;max-width: 100%; height: auto;}
+div.img-svg svg{position:absolute; margin:0; padding:0; top:0; left:0;}
+svg.overlay {opacity:0}
+svg.overlay:hover {opacity:1}
+</style>
+<style>/* Tomorrow Night Eighties Theme */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+  color: #999999;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+  color: #f2777a;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+  color: #f99157;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+  color: #ffcc66;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+  color: #99cc99;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+  color: #6699cc;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+  color: #cc99cc;
+}
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  background: #2d2d2d;
+  color: #cccccc;
+  padding: 0.5em;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+</style>
+
+</head>
+<figure class="full-width no-top"><img src="bloomsberries-2005-wto.jpg"></figure>  <ul class="top-nav">
+    <li><a href="/">Blog</a></li>
+    <li><a href="/#contact">Contact</a></li>
+    <li><a href="/atom.xml">Feed</a></li>
+  </ul><h1>Announcing: Devastate—calibrating uncertainty via trivia</h1><p><em>Updated on Sat, 25 Jun 2022 03:00:19 GMT, tagged with ‘probability’—‘uncertainty’—‘app’.</em></p><p>Table of contents—</p>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#the-game">The game</a></li>
+<li><a href="#future-directions-proportions">Future directions: proportions</a></li>
+<li><a href="#appendix-math">Appendix: math</a></li>
+<li><a href="#appendix-observablehq-plot">Appendix: ObservableHQ Plot</a></li>
+<li><a href="#appendix-react-and-redux">Appendix: React and Redux</a></li>
+<li><a href="#appendix-twitter-backup">Appendix: Twitter backup</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>On Dan Luu’s <a href="https://nitter.it/danluu/status/1477789639423320064">ringing endorsement</a> (<a href="https://twitter.com/danluu/status/1477789639423320064">original</a>), I rushed to buy Julia Galef’s <em>The Scout Mindset</em>. And I <strong>loved</strong> it.</p>
+<p>I often talk about things in terms of “completeness”, like in the sense of arguments that are “incomplete” because it omitted considerations that could have materially changed its result. I didn’t enjoy my lengthy stint in grad school but I’m grateful for having it drum into me the central importance of completeness, and I often have wished it was more widely talked about. Yes, you of course have to publish an analysis sometime and it will never be completely complete, but you</p>
+<ol>
+<li>ruthlessly prioritize finding flaws and omissions in your work during the time you spend on it,</li>
+<li>you have a low threshold for canceling publication if you find anything serious, and</li>
+<li>are frank and open about discussing the flaws you do find and didn’t address (“future work”).</li>
+</ol>
+<p>And for years I’d thought that this level of self-criticism was just a legacy of the academy, but no, here comes Galef and says, “Everyone could be like that! And here’s why and how!” 💋👌</p>
+<h2 id="the-game">The game</h2>
+<p>So there’s a delightful game in chapter six, “How sure are you?”, where you attempt to calibrate your uncertainty through a quick series of trivia questions:</p>
+<blockquote>
+<p>As you go through the list, you should notice your level of certainty fluctuating. Some questions might feel easy, and you’ll be near certain of the answer. Others may prompt you to throw up your hands and say, ‘I have no idea!’ That’s perfectly fine. Remember, the goal isn’t to know as much as possible. It’s to know how much you know.</p>
+</blockquote>
+<p>This is like <em>catnip</em> to me—ever since reading <em>Fooled by Randomness</em> when it came out in 2002, then studying statistical signal processing, and eventually joining the finance industry, I’ve thought about the challenges and rewards of skill in converting uncertainty into action. So I was reading this literally in the middle of the night in bed on my phone, so I… copied the text of the fourty questions from the ebook into my phone’s Notes app, answered the questions, and manually tallied my score:</p>
+<figure>
+<a href="./notes.jpg"><img src="./notes.jpg" alt="Screenshot of my Notes app, with timestamp: March 1, 2020, 01:12 (local time)"></a>
+<figcaption>
+Screenshot of my Notes app, with timestamp: March 1, 2020, 01:12 (local time)
+</figcaption>
+</figure>
+<p>I knew I wanted friends to try this, so I made a web app version, called Devastate: <a href="https://fasiha.github.io/devastate/" class="uri">https://fasiha.github.io/devastate/</a> and it this is what it looks like:</p>
+<figure>
+<a href="site.png"><img src="site.png" alt="Screenshot of the output of Devastate"></a>
+<figcaption>
+Screenshot of the output of Devastate
+</figcaption>
+</figure>
+<p>Same story as the book: you answer fourty trivia questions, picking your uncertainty surrounding each, and the app will spit out a graph with five dots—your expected versus actual uncertainty—plus a couple of confidence interval bands. You can share the URL with your friends: here’s the <a href="https://fasiha.github.io/devastate/#v1-14101103111310011013141200041314041000020003010103001000041014021100141303140402">link</a> to my answers and results.</p>
+<h2 id="future-directions-proportions">Future directions: proportions</h2>
+<p>Soon after I made Devastate, this graph made the rounds, from the following YouGov study, <a href="https://today.yougov.com/topics/politics/articles-reports/2022/03/15/americans-misestimate-small-subgroups-population">“From millionaires to Muslims, small subgroups of the population seem much larger to many Americans”</a>:</p>
+<figure>
+<a href="./yougov.png"><img src="./yougov.png" alt="YouGov study on proportions (blurred to avoid spoilers)"></a>
+<figcaption>
+YouGov study on proportions (blurred to avoid spoilers)
+</figcaption>
+</figure>
+<p>You can instantly imagine Devastate handling this case too: instead of binary yes/no questions that you answer and record your uncertainty about, you could do the same with proportions between 0% and 100%. I haven’t yet found a great math nor UX way to handle the boolean-to-proportion generalization yet—if you have ideas, get <a href="/#contact">in touch</a>.</p>
+<p>I’m 50% sure I’ll revisit this problem and figure it out within two years (75% within five years).</p>
+<h2 id="appendix-math">Appendix: math</h2>
+<blockquote>
+<p>This section is for the math fans, about how I draw those 50-percentile and 90-percentile, and why you might want to too.</p>
+</blockquote>
+<p>Galef just sketches how to anchor your performance on this game: the fraction of questions you got correct within each confidence bucket should more or less match that confidence's probability. There's a way to make this quite rigorous, and as we'll see, that extra rigor is actually useful when it comes to interpeting your results.</p>
+<p>So in statistics, there's a probability distribution called the binomial distribution. This is one of the first probability distributions described formally: Jacob Bernoulli described many of its properties in the late 1600s. It's traditionally described as the distribution that arises when you flip a <code>p</code>-weighted coin <code>n</code> times—that is, if you have a coin that comes up heads with probability <code>p</code> and you flip it <code>n</code> times in a row, how many times does it come up heads? We know it's between <code>0 &lt;= k &lt;= n</code>, and the binomial distribution assigns the probability to each <code>k</code> for given <code>p</code> and <code>n</code>.</p>
+<p>This of course exactly matches our application. My friend Hatem answered five questions that he assigned 85% confidence to and got three of them right, for an actual frequency of 3/5=60%. If you have Python and Scipy, you can ask it for the binomial probability of him getting <code>k=0...5</code> right:</p>
+<pre class="py"><code class="hljs python"><span class="hljs-keyword">from</span> scipy.stats <span class="hljs-keyword">import</span> binom <span class="hljs-keyword">as</span> binomrv
+<span class="hljs-keyword">for</span> k <span class="hljs-keyword">in</span> range(<span class="hljs-number">6</span>):
+  print(<span class="hljs-string">f'- Probability(k = <span class="hljs-subst">{k}</span>) = <span class="hljs-subst">{binomrv.pmf(k, <span class="hljs-number">5</span>, <span class="hljs-number">0.85</span>):<span class="hljs-number">0.3</span>f}</span>'</span>)</code></pre>
+<p>And here's the output:</p>
+<ul>
+<li>Probability(k = 0) = 0.000</li>
+<li>Probability(k = 1) = 0.002</li>
+<li>Probability(k = 2) = 0.024</li>
+<li>Probability(k = 3) = 0.138 👈 Hatem's actual result</li>
+<li>Probability(k = 4) = 0.392 👈 higher probability</li>
+<li>Probability(k = 5) = 0.444 👈 <em>highest</em> probability!</li>
+</ul>
+<p>We know that Hatem's empirical frequency of 3/5=60% is lower than the ideal of 85% (which is the confidence he assigned his answers to these five questions). This shows a surprising fact: in the ideal case, a perfectly-calibrated person who answered five questions with 85% confidence would get all five right, and get 5/5=100% frequency, <em>more often</em> than 4/5=80%, even though 80% is closer to 85% than 100%.</p>
+<p>That surprised me!</p>
+<p>Similarly, Hatem answered four questions with 55% confidence and got 3 of them right. So 75% actual frequency versus 55% confidence: seems pretty uncalibrated right? But Python says (<code>binomrv.pmf(3, 4, 0.55)</code>) this has probability 0.300, which is quite a bit higher, <em>almost double</em> the probability in the <code>k=3</code> bullet for the <code>n=5, p=0.85</code> case above, 0.138.</p>
+<p>That is, answering 3/4=75% right at 55% confidence is much better calibrated than answering 3/5=60% at 85% confidence.</p>
+<p>So it's clear that if we want to make sense of the five dots (our actual frequency of correctness vs our subjective probability) correctly, we could use some statistics. Specifically, we need to see <em>confidence intervals</em> for each of the five dots to tell us how well we did, for the actual number of <code>n</code> we answered for each confidence level.</p>
+<blockquote>
+<p>I'm using "confidence interval" as a technical phrase to refer to the probability concept desscribed below. I also use the word "confidence" to refer to the five subjective probabilities in Galef's book, 55%, 65%, 75%, 85%, and 95%, but the two usages are unrelated.</p>
+</blockquote>
+<p>A <code>P</code>-percentile confidence interval (where <code>P</code> might be fifty, ninety, etc., some number between one and ninety-nine) is two numbers, call them <code>k1</code> and <code>k2</code>, such that</p>
+<ul>
+<li><code>Probability(k1 &lt;= k) = (100 - P / 2) / 100</code> and</li>
+<li><code>Probability(k &lt;= k2) = (100 + P / 2) / 100</code></li>
+</ul>
+<p>for a fixed <code>n</code> and <code>p</code>. That is, for the <code>P=50</code> percentile, there's a range of correct answers, <code>k1</code> to <code>k2</code>. For <code>P=75</code> or <code>P=90</code> confidence intervals, the bounds get steadily wider because <em>more</em> of the binomial distribution's weight is captured between those boundaries. If your <code>k</code> correct answers are within the fifty-percentile confidence interval, you're doing <em>better</em> than if your <code>k</code> is within the seventy-fifth percentile.</p>
+<p>So the thing is…</p>
+<p>While ordinarily confidence intervals are easy to calculate, <em>binomial</em> confidence intervals are iffy, because the binomial is a <em>discrete</em> distribution. It can tell you the probability of answering three (<code>k</code>) out of four (<code>n</code>) questions correctly if the probability of being correct is <code>p=0.55</code>, but when you ask it for which <code>k1</code> satisfies this equation: <code>Probability(k1 &lt;= 3; n=3, p=0.55) = 0.25</code>, that is, what <code>k1</code> is at the twenty-fifth percentile of the distribution, it can only answer with an <em>integer</em>. Below we ask it for the fifth, twenty-fifth, seventy-fifth, and ninety-fifth percentile <code>k1</code>s:</p>
+<pre class="py"><code class="hljs python"><span class="hljs-keyword">from</span> scipy.stats <span class="hljs-keyword">import</span> binom <span class="hljs-keyword">as</span> binomrv
+print(binomrv.ppf([<span class="hljs-number">0.05</span>, <span class="hljs-number">0.25</span>, <span class="hljs-number">0.75</span>, <span class="hljs-number">0.95</span>], <span class="hljs-number">4</span>, <span class="hljs-number">.55</span>))
+<span class="hljs-comment"># [1, 2, 3, 4]</span></code></pre>
+<p>and see that the standard binomial distribution's machinery just returns integers for the percent point function (<a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.binom.html"><code>ppf</code></a>, the inverse of the cumulative distribution function (CDF), i.e., percentiles).</p>
+<p>Plotting these as confidence intervals is unappealing because these can <em>collapse</em> the bounds of confidence intervals in an unpleasant way. Consider this:</p>
+<pre class="py"><code class="hljs python">print(binomrv.ppf([<span class="hljs-number">0.05</span>, <span class="hljs-number">0.25</span>, <span class="hljs-number">0.75</span>, <span class="hljs-number">0.95</span>], <span class="hljs-number">14</span>, <span class="hljs-number">.95</span>))
+<span class="hljs-comment"># [12, 13, 14, 14]</span></code></pre>
+<p>My friend Aubrey got correct all <code>k=14</code> of <code>n=14</code> questions she marked as 95% (<code>p=.95</code>), and Scipy can just give me the same number (14) for the seventy-fifth <em>and</em> ninety-fifth percentiles (these are the tops of the 50-percentile confidence interval and the 90-percentile confidence interval respectively). Is she closer to the fifty-percentile confidence interval or the nintety-percentile? This won't tell us.</p>
+<p>So while the ordinary binomial distribution can certainly give us some confidence intervals, it'd be nice if we could find a <em>continuous</em> extension of the binomial distribution to help give us more aesthetically-pleasing confidence intervals.</p>
+<p>There's this R package called <a href="https://rdrr.io/cran/cbinom/man/cbinom.html"><code>cbinom</code></a> that implements a <a href="https://arxiv.org/abs/1303.5990">2013 paper</a> by Andreii Ilienko, but I didn't like how that construction results in a probability mass function (PMF) that's shifted from the ordinary binomial.</p>
+<p>So I managed to construct my own continuous extension to the binomial distribution 😇 and it leverages the wonderful <a href="https://mpmath.org">mpmath</a> library because I did not want to do any Real Math—quadrature integration for life! The details are in <a href="./math/confidenceIntervals.py"><code>confidenceIntervals.py</code></a>, but here's the gist of it.</p>
+<p>The standard binomial PMF can readily be extended to fractional <code>k</code>, up to a normalization factor, which we compute via numerical integration. So you still need a fixed integer <code>n &gt;= 1</code> and fixed <code>0 &lt;= p &lt;= 1</code>, but now <code>k</code> is allowed to be real and <code>0 &lt;= k &lt;= n + 1</code>. Here's some example probability mass functions:</p>
+<figure>
+<a href="./continuous_binomial_pmf.svg"><img src="./continuous_binomial_pmf.svg" alt="Examples of continuous binominal distribution density"></a>
+<figcaption>
+Examples of continuous binominal distribution density
+</figcaption>
+</figure>
+<p>With the probability mass function readily implemented, we can compute the confidence intervals using mpmath's support for numerical quadrature integration and root finding. It's about as brute-force an approach as imaginable so there's no point in going on about it 🙃.</p>
+<p>Then, since of course we don't want to be integrating things in JavaScript, I generate a bunch of relevant confidence intervals for the <code>p</code>, <code>n</code> and <code>k</code> values that are in our app, save them to JSON, and that's what the app uses.</p>
+<h2 id="appendix-observablehq-plot">Appendix: ObservableHQ Plot</h2>
+<p>I used <a href="https://observablehq.com/@observablehq/plot">ObservableHQ’s Plot</a> to make the graph, and I rather liked it! It’s by the same folks that made D3.js, Mike Bostock and crew, so you won’t be surprised by</p>
+<ul>
+<li>how cerebral the API is—very powerful, lots of reading the manual and lots of experimentation,</li>
+<li>elegant output out of the box—I sprinkled some CSS but the default SVG output is just gorgeous,</li>
+<li>the lack of TypeScript support—D3 has remained in this shrinking set of JavaScript projects that are not interested in TypeScript.</li>
+</ul>
+<p>I get the same metallic taste in my mouth when I use D3 and Plot and any grammar-of-graphics library as when I used Clojure: very cool, very cerebral, very powerful—and very easy to split your lip and taste your blood. I often wonder if, just as I migrated away from Clojure’s beautiful data transforms to uglier and—for me—more productive static-typed ecosystems, I’ll ever fully leave D3’s sphere—Plotly is quite nice and I do like it, and in Python of course I’m very productive with the ugliest of them all (sorry Matplotlib).</p>
+<h2 id="appendix-react-and-redux">Appendix: React and Redux</h2>
+<p>Nothing special to report. Create-React-App. Redux Toolkit. The latest in React ecosystem tooling. “Go forth and be fruitful” tools—I like them.</p>
+<h2 id="appendix-twitter-backup">Appendix: Twitter backup</h2>
+<p>I have a pretty good system for backing up content I read online (<a href="https://github.com/fasiha/yamanote">Yamanote</a>) but you might not so here’s an in-document backup: starting Jan 2, 2022, 23:51 PM UTC, @DanLuu tweets,</p>
+<blockquote>
+<p>I finally got around to reading Julia Galef's book on how to think clearly, Scout Mindset.</p>
+<p>I liked it more than I expected to despite expecting to be highly biased towards liking it since it describes approaches I appreciate.</p>
+<p>One thing I really liked about it was that it suggests/summarizes actionable ways to check your own thinking, which I found useful even when it was discussing a way of thinking that I've had since I was a kid since I still mess up all the time and having concrete checks helps.</p>
+<p>Another is that it does a really good job of laying out the case for various ways of thinking. There are 6 blog posts that were on my to-do list that I think I don't need to write anymore since the book describes what I wanted to describe, but better than I would've done it.</p>
+<p>For example, a counter-argument to the idea that one needs to be hyper-optimistic and not acknowledge realistic probabilities of failure to be successful.</p>
+<p>Julia's chapter on this uses a broader array of examples than I would've and is written to appeal to a wider audience, but, in appealing to a broader audience, the chapter doesn't sacrifice intellectual rigorousness.</p>
+<p>When that's possible, I view that as basically strictly better than how I write and I would write that way if I knew how in a time-efficient way.</p>
+<p>One thing I find amusing is that a lot of the negative reviews on Amazon seem to conflate having a difficult to read style with rigor and they knock the book for being unscientific or shallow because it's easy to read, like</p>
+</blockquote>
+<hr>
+<p>(Banner: crop from <a href="https://flic.kr/p/7LDp4">@bloomsberries’ Flickr</a>: “balance scale: free trade v humans”. 2005 anti-WTO protest art in Victoria Park, Hong Kong)</p>
+<p>
+<small>Previous: <a href="/post/excess-returns/">A look at S&amp;P 500's real excess return over Treasuries</a><br></small>
+</p>
