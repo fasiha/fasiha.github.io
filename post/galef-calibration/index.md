@@ -142,7 +142,7 @@ Nothing special to report. Create-React-App. Redux Toolkit. The latest in React 
 
 ## Appendix: Twitter backup
 
-I have a pretty good system for backing up content I read online ([Yamanote](https://github.com/fasiha/yamanote)) but you might not so here’s an in-document backup: starting Jan 2, 2022, 23:51 PM UTC, @DanLuu tweets,
+I have a pretty good system for backing up content I read online ([Yamanote](https://github.com/fasiha/yamanote)) but you might not so here’s an in-document backup: starting Jan 2, 2022, 23:51 PM UTC, @DanLuu tweets ([Nitter](https://nitter.eu/danluu/status/1477789639423320064), [Twitter](https://twitter.com/danluu/status/1477789639423320064)),
 > I finally got around to reading Julia Galef's book on how to think clearly, Scout Mindset.
 > 
 > I liked it more than I expected to despite expecting to be highly biased towards liking it since it describes approaches I appreciate.
