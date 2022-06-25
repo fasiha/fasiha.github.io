@@ -40,7 +40,11 @@ I knew I wanted friends to try this, so I made a web app version, called Devasta
 
 ![Screenshot of the output of Devastate](site.png)
 
-Same story as the book: you answer fourty trivia questions, picking your uncertainty surrounding each, and the app will spit out a graph with five dots—your expected versus actual uncertainty—plus a couple of confidence interval bands. You can share the URL with your friends: here’s the [link](https://fasiha.github.io/devastate/#v1-14101103111310011013141200041314041000020003010103001000041014021100141303140402) to my answers and results.
+Same story as the book: you answer fourty trivia questions, picking your uncertainty surrounding each, and the app will spit out a graph with five dots—your expected versus actual uncertainty—plus a couple of confidence interval bands.
+
+You can share the URL with your friends: here’s the [link](https://fasiha.github.io/devastate/#v1-14101103111310011013141200041314041000020003010103001000041014021100141303140402) to my answers and results.
+
+Please play the game and read the book!
 
 ## Future directions: proportions
 
@@ -56,9 +60,9 @@ I’m 50% sure I’ll revisit this problem and figure it out within two years (7
 
 > This section is for the math fans, about how I draw those 50-percentile and 90-percentile, and why you might want to too.
 
-Galef just sketches how to anchor your performance on this game: the fraction of questions you got correct within each confidence bucket should more or less match that confidence's probability. There's a way to make this quite rigorous, and as we'll see, that extra rigor is actually useful when it comes to interpeting your results.
+Galef just sketches how to anchor your performance on this game: the fraction of questions you got correct within each confidence bucket should more or less match that confidence’s probability. There’s a way to make this quite rigorous, and as we’ll see, that extra rigor is actually useful when it comes to interpeting your results.
 
-So in statistics, there's a probability distribution called the binomial distribution. This is one of the first probability distributions described formally: Jacob Bernoulli described many of its properties in the late 1600s. It's traditionally described as the distribution that arises when you flip a `p`-weighted coin `n` times—that is, if you have a coin that comes up heads with probability `p` and you flip it `n` times in a row, how many times does it come up heads? We know it's between `0 <= k <= n`, and the binomial distribution assigns the probability to each `k` for given `p` and `n`.
+So in statistics, there’s a probability distribution called the binomial distribution. This is one of the first probability distributions described formally: Jacob Bernoulli described many of its properties in the late 1600s. It’s traditionally described as the distribution that arises when you flip a `p`-weighted coin `n` times—that is, if you have a coin that comes up heads with probability `p` and you flip it `n` times in a row, how many times does it come up heads? We know it’s between `0 <= k <= n`, and the binomial distribution assigns the probability to each `k` for given `p` and `n`.
 
 This of course exactly matches our application. My friend Hatem answered five questions that he assigned 85% confidence to and got three of them right, for an actual frequency of 3/5=60%. If you have Python and Scipy, you can ask it for the binomial probability of him getting `k=0...5` right:
 ```py
@@ -66,15 +70,15 @@ from scipy.stats import binom as binomrv
 for k in range(6):
   print(f'- Probability(k = {k}) = {binomrv.pmf(k, 5, 0.85):0.3f}')
 ```
-And here's the output:
+And here’s the output:
 - Probability(k = 0) = 0.000
 - Probability(k = 1) = 0.002
 - Probability(k = 2) = 0.024
-- Probability(k = 3) = 0.138 👈 Hatem's actual result
+- Probability(k = 3) = 0.138 👈 Hatem’s actual result
 - Probability(k = 4) = 0.392 👈 higher probability
 - Probability(k = 5) = 0.444 👈 *highest* probability!
 
-We know that Hatem's empirical frequency of 3/5=60% is lower than the ideal of 85% (which is the confidence he assigned his answers to these five questions). This shows a surprising fact: in the ideal case, a perfectly-calibrated person who answered five questions with 85% confidence would get all five right, and get 5/5=100% frequency, *more often* than 4/5=80%, even though 80% is closer to 85% than 100%.
+We know that Hatem’s empirical frequency of 3/5=60% is lower than the ideal of 85% (which is the confidence he assigned his answers to these five questions). This shows a surprising fact: in the ideal case, a perfectly-calibrated person who answered five questions with 85% confidence would get all five right, and get 5/5=100% frequency, *more often* than 4/5=80%, even though 80% is closer to 85% than 100%.
 
 That surprised me!
 
@@ -82,15 +86,15 @@ Similarly, Hatem answered four questions with 55% confidence and got 3 of them r
 
 That is, answering 3/4=75% right at 55% confidence is much better calibrated than answering 3/5=60% at 85% confidence.
 
-So it's clear that if we want to make sense of the five dots (our actual frequency of correctness vs our subjective probability) correctly, we could use some statistics. Specifically, we need to see *confidence intervals* for each of the five dots to tell us how well we did, for the actual number of `n` we answered for each confidence level.
+So it’s clear that if we want to make sense of the five dots (our actual frequency of correctness vs our subjective probability) correctly, we could use some statistics. Specifically, we need to see *confidence intervals* for each of the five dots to tell us how well we did, for the actual number of `n` we answered for each confidence level.
 
-> I'm using "confidence interval" as a technical phrase to refer to the probability concept desscribed below. I also use the word "confidence" to refer to the five subjective probabilities in Galef's book, 55%, 65%, 75%, 85%, and 95%, but the two usages are unrelated.
+> I’m using "confidence interval" as a technical phrase to refer to the probability concept desscribed below. I also use the word "confidence" to refer to the five subjective probabilities in Galef’s book, 55%, 65%, 75%, 85%, and 95%, but the two usages are unrelated.
 
 A `P`-percentile confidence interval (where `P` might be fifty, ninety, etc., some number between one and ninety-nine) is two numbers, call them `k1` and `k2`, such that
 - `Probability(k1 <= k) = (100 - P / 2) / 100` and
 - `Probability(k <= k2) = (100 + P / 2) / 100`
 
-for a fixed `n` and `p`. That is, for the `P=50` percentile, there's a range of correct answers, `k1` to `k2`. For `P=75` or `P=90` confidence intervals, the bounds get steadily wider because *more* of the binomial distribution's weight is captured between those boundaries. If your `k` correct answers are within the fifty-percentile confidence interval, you're doing *better* than if your `k` is within the seventy-fifth percentile.
+for a fixed `n` and `p`. That is, for the `P=50` percentile, there’s a range of correct answers, `k1` to `k2`. For `P=75` or `P=90` confidence intervals, the bounds get steadily wider because *more* of the binomial distribution’s weight is captured between those boundaries. If your `k` correct answers are within the fifty-percentile confidence interval, you’re doing *better* than if your `k` is within the seventy-fifth percentile.
 
 So the thing is…
 
@@ -100,28 +104,28 @@ from scipy.stats import binom as binomrv
 print(binomrv.ppf([0.05, 0.25, 0.75, 0.95], 4, .55))
 # [1, 2, 3, 4]
 ```
-and see that the standard binomial distribution's machinery just returns integers for the percent point function ([`ppf`](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.binom.html), the inverse of the cumulative distribution function (CDF), i.e., percentiles).
+and see that the standard binomial distribution’s machinery just returns integers for the percent point function ([`ppf`](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.binom.html), the inverse of the cumulative distribution function (CDF), i.e., percentiles).
 
 Plotting these as confidence intervals is unappealing because these can *collapse* the bounds of confidence intervals in an unpleasant way. Consider this:
 ```py
 print(binomrv.ppf([0.05, 0.25, 0.75, 0.95], 14, .95))
 # [12, 13, 14, 14]
 ```
-My friend Aubrey got correct all `k=14` of `n=14` questions she marked as 95% (`p=.95`), and Scipy can just give me the same number (14) for the seventy-fifth *and* ninety-fifth percentiles (these are the tops of the 50-percentile confidence interval and the 90-percentile confidence interval respectively). Is she closer to the fifty-percentile confidence interval or the nintety-percentile? This won't tell us.
+My friend Aubrey got correct all `k=14` of `n=14` questions she marked as 95% (`p=.95`), and Scipy can just give me the same number (14) for the seventy-fifth *and* ninety-fifth percentiles (these are the tops of the 50-percentile confidence interval and the 90-percentile confidence interval respectively). Is she closer to the fifty-percentile confidence interval or the nintety-percentile? This won’t tell us.
 
-So while the ordinary binomial distribution can certainly give us some confidence intervals, it'd be nice if we could find a *continuous* extension of the binomial distribution to help give us more aesthetically-pleasing confidence intervals.
+So while the ordinary binomial distribution can certainly give us some confidence intervals, it’d be nice if we could find a *continuous* extension of the binomial distribution to help give us more aesthetically-pleasing confidence intervals.
 
-There's this R package called [`cbinom`](https://rdrr.io/cran/cbinom/man/cbinom.html) that implements a [2013 paper](https://arxiv.org/abs/1303.5990) by Andreii Ilienko, but I didn't like how that construction results in a probability mass function (PMF) that's shifted from the ordinary binomial.
+There’s this R package called [`cbinom`](https://rdrr.io/cran/cbinom/man/cbinom.html) that implements a [2013 paper](https://arxiv.org/abs/1303.5990) by Andreii Ilienko, but I didn’t like how that construction results in a probability mass function (PMF) that’s shifted from the ordinary binomial.
 
-So I managed to construct my own continuous extension to the binomial distribution 😇 and it leverages the wonderful [mpmath](https://mpmath.org) library because I did not want to do any Real Math—quadrature integration for life! The details are in [`confidenceIntervals.py`](./math/confidenceIntervals.py), but here's the gist of it.
+So I managed to construct my own continuous extension to the binomial distribution 😇 and it leverages the wonderful [mpmath](https://mpmath.org) library because I did not want to do any Real Math—quadrature integration for life! The details are in [`confidenceIntervals.py`](./math/confidenceIntervals.py), but here’s the gist of it.
 
-The standard binomial PMF can readily be extended to fractional `k`, up to a normalization factor, which we compute via numerical integration. So you still need a fixed integer `n >= 1` and fixed `0 <= p <= 1`, but now `k` is allowed to be real and `0 <= k <= n + 1`. Here's some example probability mass functions:
+The standard binomial PMF can readily be extended to fractional `k`, up to a normalization factor, which we compute via numerical integration. So you still need a fixed integer `n >= 1` and fixed `0 <= p <= 1`, but now `k` is allowed to be real and `0 <= k <= n + 1`. Here’s some example probability mass functions:
 
 ![Examples of continuous binominal distribution density](./continuous_binomial_pmf.svg)
 
-With the probability mass function readily implemented, we can compute the confidence intervals using mpmath's support for numerical quadrature integration and root finding. It's about as brute-force an approach as imaginable so there's no point in going on about it 🙃.
+With the probability mass function readily implemented, we can compute the confidence intervals using mpmath’s support for numerical quadrature integration and root finding. It’s about as brute-force an approach as imaginable so there’s no point in going on about it 🙃.
 
-Then, since of course we don't want to be integrating things in JavaScript, I generate a bunch of relevant confidence intervals for the `p`, `n` and `k` values that are in our app, save them to JSON, and that's what the app uses.
+Then, since of course we don’t want to be integrating things in JavaScript, I generate a bunch of relevant confidence intervals for the `p`, `n` and `k` values that are in our app, save them to JSON, and that’s what the app uses.
 
 ## Appendix: ObservableHQ Plot
 
