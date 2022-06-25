@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://fasiha.github.io/</id>
     <title>Insight≠Numbers</title>
-    <updated>2020-11-08T03:01:01Z</updated>
+    <updated>2022-06-25T03:00:19Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Ahmed Fasih</name>
@@ -12,6 +12,8 @@
     <subtitle>A blog by Ahmed Fasih</subtitle>
     <logo>https://fasiha.github.io/glen-helen.jpg</logo>
     <rights>Unless otherwise noted, released into the public domain under CC0.</rights>
+    <category term="app">
+    </category>
     <category term="finance">
     </category>
     <category term="history">
@@ -22,12 +24,28 @@
     </category>
     <category term="modernity">
     </category>
+    <category term="probability">
+    </category>
     <category term="risk">
     </category>
     <category term="study">
     </category>
     <category term="tech">
     </category>
+    <category term="uncertainty">
+    </category>
+    <entry>
+        <title type="html"><![CDATA[Announcing: Devastate—calibrating uncertainty via trivia]]></title>
+        <id>https://fasiha.github.io/post/galef-calibration/</id>
+        <link href="https://fasiha.github.io/post/galef-calibration/">
+        </link>
+        <updated>2022-06-25T03:00:19Z</updated>
+        <summary type="html"><![CDATA[A web version of the exercise proposed by Julia Galef in “The Scout Mindset”]]></summary>
+        <author>
+            <name>Ahmed Fasih</name>
+            <uri>https://fasiha.github.io//#contact</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[A look at S&P 500's real excess return over Treasuries]]></title>
         <id>https://fasiha.github.io/post/excess-returns/</id>
