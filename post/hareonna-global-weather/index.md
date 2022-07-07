@@ -106,11 +106,11 @@ KQED has a story, [Why Does The Bay Area Have So Many Microclimates?](https://ww
 
 Here’s the Bay’s terrain, [texture-shaded](../texshade), superimposed on OpenStreetMap:
 
-![The Bay Area: map with terrain; press/hover for annotations; [high-resolution](./bay-300.jpg)](./bay-300.jpg) HOVEROVERLAY(overlay.svg) simple
+![The Bay Area: map with terrain; press/hover for annotations; [high-resolution](./bay-600.jpg)](./bay-600.jpg) HOVEROVERLAY(overlay.svg) simple
 
 Long-press or hover over the above map to see my annotations but even without them, you may be able to see why South San Francisco, Daly City, and San Francisco proper all might be chilly, windy, and foggy, while areas south like San Mateo and definity by Palo Alto are warmer and drier: the Coastal Ranges that begin just south of Daly City put some ten kilometers of mountains between the Pacific and the cities along the Bay.
 
-Here’s a [high-res 300 dpi render](./bay-300.jpg), which I hope you’ll take a look at: both are made from USGS’ delicious [NED ⅑″ topo-bathymetry](https://www.sciencebase.gov/catalog/item/581d2938e4b08da350d61140) of the Bay Area—one-ninth of an arcsecond is a pixel every *three* meters. Which is stunning: the widely used SRTM terrain dataset is a pixel every *thirty* meters (and is the data used by my [Texture-Shaded Globe](../texshade)).
+Here’s a [high-res 600 dpi render](./bay-600.jpg), which I hope you’ll take a look at: both are made from USGS’ delicious [NED ⅑″ topo-bathymetry](https://www.sciencebase.gov/catalog/item/581d2938e4b08da350d61140) of the Bay Area—one-ninth of an arcsecond is a pixel every *three* meters. Which is stunning: the widely used SRTM terrain dataset is a pixel every *thirty* meters (and is the data used by my [Texture-Shaded Globe](../texshade)).
 
 > (My fellow GIS lovers: QGIS didn’t export PGW files for these layout renders, so bear with me: x min/max -122.543° to -121.938, y min/max 37.333° to 37.938°.)
 
