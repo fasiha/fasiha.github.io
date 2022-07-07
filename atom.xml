@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://fasiha.github.io/</id>
     <title>Insight≠Numbers</title>
-    <updated>2022-06-25T03:00:19Z</updated>
+    <updated>2022-07-05T17:09:46Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Ahmed Fasih</name>
@@ -17,6 +17,8 @@
     <category term="finance">
     </category>
     <category term="history">
+    </category>
+    <category term="maps">
     </category>
     <category term="math">
     </category>
@@ -34,6 +36,20 @@
     </category>
     <category term="uncertainty">
     </category>
+    <category term="weather">
+    </category>
+    <entry>
+        <title type="html"><![CDATA[Hareonna: visualize weather around the world]]></title>
+        <id>https://fasiha.github.io/post/hareonna-global-weather/</id>
+        <link href="https://fasiha.github.io/post/hareonna-global-weather/">
+        </link>
+        <updated>2022-07-05T17:09:46Z</updated>
+        <summary type="html"><![CDATA[Intuitively visualize temperatures from the 13’500+ weather stations in the Global Historical Climatology Network daily (GHCNd) database, find the places with your favorite weather]]></summary>
+        <author>
+            <name>Ahmed Fasih</name>
+            <uri>https://fasiha.github.io//#contact</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Announcing: Devastate—calibrating uncertainty via trivia]]></title>
         <id>https://fasiha.github.io/post/galef-calibration/</id>

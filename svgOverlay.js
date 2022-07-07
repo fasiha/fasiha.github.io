@@ -1,7 +1,7 @@
 "use strict";
 
 // All SVGs from
-// https://svg-edit.github.io/svgedit/releases/svg-edit-2.8.1/svg-editor.html !
+// https://svg-edit.github.io/svgedit !
 
 var fs = require('fs');
 var spawnSync = require('child_process').spawnSync;
@@ -127,6 +127,27 @@ function mkImgSvgContainer(imagepath, alt, svgNodes, fsImagePath) {
   </div>`;
 }
 
+/*
+Just create an SVG with the same pixel dimension as the JPG,
+add the JPG to it as a background, create your annotations
+IN THE SVG, delete the JPG background, and save the SVG as an overlay.
+*/
+function mkImgSvgContainerSimple(imagepath, alt, svgContents, fsImagePath) {
+  fsImagePath = fsImagePath || imagepath;
+
+  var small = fsImagePath.replace('.jpg', '-small.jpg')
+                  ? imagepath.replace('.jpg', '-small.jpg')
+                  : imagepath;
+  return `
+  <div class="img-svg">
+    <a href="${imagepath}">
+      <img src="${small}" alt="${alt}" />
+      ${svgContents}
+    </a>
+  </div>`;
+}
+
+
 function imageToSize(imagepath) {
   return spawnSync('identify', [ imagepath ],
                    {input : undefined, encoding : 'utf8'})
@@ -134,8 +155,8 @@ function imageToSize(imagepath) {
       .split('x');
 }
 
-function wrapFigure(contents, alt, url, hoverurl) {
-  var links = ` (<a href="${url}">JPG</a>, <a href="${hoverurl}">SVG</a>)`;
+function wrapFigure(contents, alt, url, hoverurl, links=undefined) {
+  if(links === undefined) { links= ` (<a href="${url}">JPG</a>, <a href="${hoverurl}">SVG</a>)`; }
   return `<figure>
   ${contents}
   <figcaption>${alt}${links}</figcaption>
@@ -149,15 +170,17 @@ function unindentHtml(str) {
 function markdownToHtml(md, parentpath) {
   parentpath = parentpath || '';
   return md.replace(
-      /\n!\[([^\]]+)\]\(([^\)]+)\)\s*HOVEROVERLAY\(([^\)]+)\)\n/g,
-      (match, alt, url, hoverurl) => {
+      /\n!\[([^\]]+)\]\(([^\)]+)\)\s*HOVEROVERLAY\(([^\)]+)\)(.*)\n/g,
+      (match, alt, url, hoverurl, rest) => {
+        const simple = rest.includes('simple');
         var fsHoverURL = path.join(parentpath, hoverurl);
         var fsURL = path.join(parentpath, url);
         return '\n' +
                unindentHtml(wrapFigure(
-                   mkImgSvgContainer(url, alt, svgpathToSvgNodes(fsHoverURL),
-                                     fsURL),
-                   alt, url, hoverurl)) +
+                   simple 
+                    ? mkImgSvgContainerSimple(url, alt, fs.readFileSync(fsHoverURL), fsURL) 
+                    : mkImgSvgContainer(url, alt, svgpathToSvgNodes(fsHoverURL), fsURL),
+                   alt, url, hoverurl, simple ? "" : undefined)) +
                '\n';
       });
 }
