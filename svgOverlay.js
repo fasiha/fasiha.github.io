@@ -140,10 +140,8 @@ function mkImgSvgContainerSimple(imagepath, alt, svgContents, fsImagePath) {
                   : imagepath;
   return `
   <div class="img-svg">
-    <a href="${imagepath}">
-      <img src="${small}" alt="${alt}" />
-      ${svgContents}
-    </a>
+    <img src="${small}" alt="${alt}" />
+    ${svgContents}
   </div>`;
 }
 
