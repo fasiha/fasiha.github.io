@@ -29,9 +29,6 @@ function filepathToAbspath(filepath) {
 }
 function filepathToURL(filepath) { return URL + filepathToAbspath(filepath); }
 
-var css =
-    '<style>' + fs.readFileSync('assets/modest.css', 'utf8') + '</style>\n';
-
 var plotlyPreamble =
     `<script src="${
                     filepathToAbspath('assets/plotly-basic-1.27.1.min.js')
@@ -135,6 +132,9 @@ function buildOneMarkdown(meta, prevMeta, nextMeta, metas) {
   var outfile = meta.outfile;
   var ispost = prevMeta || nextMeta;
 
+  const pathToTop = '../'.repeat((filepath.split('/').length - 1));
+  const pathToCss = pathToTop + 'assets/modest.css';
+
   var pandocParams = [
     '--filter', 'filter.js', '--no-highlight', '-t', 'html5', '-f',
     'markdown_github-hard_line_breaks+yaml_metadata_block+markdown_in_html_blocks+auto_identifiers'
@@ -142,7 +142,7 @@ function buildOneMarkdown(meta, prevMeta, nextMeta, metas) {
   var htmlPromise = spawnPromise(spawn('pandoc', pandocParams),
                                  preprocessMarkdown(meta.contents, meta));
 
-  var headHtmlPromise = htmlPromise.then(html => {
+  var headHtmlPromise = htmlPromise.then(async html => {
     if (meta.mathjax) {
       html = html.replace(/\\&amp;/g, '&');
     }
@@ -161,7 +161,7 @@ function buildOneMarkdown(meta, prevMeta, nextMeta, metas) {
                          }" type="application/atom+xml" rel="alternate" />\n`;
     head += social(outfile, meta.title, meta.description,
                    meta.socialBanner || meta.banner, meta.outfile);
-    head += css;
+    head += `<link href="${pathToCss}" rel="stylesheet">`;
     if (tohighlight) {
       head += hlcss;
     }
@@ -176,7 +176,7 @@ function buildOneMarkdown(meta, prevMeta, nextMeta, metas) {
 
     head += '\n</head>\n';
 
-    head += meta.banner ? banner(meta.banner, filepath.split('/').slice(0, -1).join('/')) : '';
+    head += meta.banner ? (await banner(meta.banner, filepath.split('/').slice(0, -1).join('/'))) : '';
 
     if (ispost) {
       head += topnav();
@@ -294,17 +294,13 @@ function subline(meta) {
   return `<p><em>${text}</em></p>`;
 }
 
-function banner(url, parentPath) {
-  const [w, h] = imageToSize((parentPath + '/' + url).replace(/^\//, ''));
+async function banner(url, parentPath) {
+  const [w, h] = await imageToSize((parentPath + '/' + url).replace(/^\//, ''));
   return `<figure class="full-width no-top"><img class="top-banner-image" src="${url}" width="${w}" height="${h}"></figure>`;
 }
 
 function imageToSize(imagepath) {
-  console.log(imagepath)
-  return spawnSync('identify', [ imagepath ],
-                   {input : undefined, encoding : 'utf8'})
-      .stdout.split(/\s+/)[2]
-      .split('x');
+  return spawnPromise(spawn('identify', [ imagepath ])).then(s=>s.split(/\s+/)[2].split('x'));
 }
 
 function headline(title) { return `<h1>${title}</h1>`; }
