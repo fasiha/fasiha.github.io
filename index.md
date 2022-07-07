@@ -33,4 +33,4 @@ My code Q&A on [StackOverflow](https://stackoverflow.com/users/500207/ahmed-fasi
 
 Pandoc is good. [Modest](https://markdowncss.github.io/modest/) CSS is great. [SVG-Edit](https://github.com/SVG-Edit/svgedit) is amazing. We also use Klipse for interactive code execution, highlight.js for syntax highlighting, JSDOM for server-side rendering as much as we can, and MathJax and mathjax-node-page for equations.
 
-(Image credits: banner—self, at Glen Helen Nature Preserve, Yellow Springs, Ohio, USA. All rights reserved.)
+(Image credits: banner—self, at Glen Helen Nature Preserve, Yellow Springs, Ohio, USA. I reserve all rights on this banner image.)

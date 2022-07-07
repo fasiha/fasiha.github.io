@@ -34,7 +34,7 @@ This shows the temperature profiles at five weather stations close to where I’
 - the East Coast, Washington, DC area (IAD airport),
 - the Midwest (CMH airport),
 - coastal southeast Malaysia,
-- coastal southeast India, near where I grew up.
+- coastal southeast India.
 
 The two lines in each panel are highs and lows, with Celsius on the y-axis. The x-axis is interesting because it’s *percentiles*: a number between 0 and 100.
 - 0%ile means the all-time minimum in the three-year data window,
