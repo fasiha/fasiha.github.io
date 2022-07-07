@@ -169,7 +169,7 @@ function unindentHtml(str) {
 function markdownToHtml(md, parentpath) {
   parentpath = parentpath || '';
   return md.replace(
-      /\n!\[([^\]]+)\]\(([^\)]+)\)\s*HOVEROVERLAY\(([^\)]+)\)(.*)\n/g,
+      /\n!\[(.+)\]\(([^\)]+)\)\s*HOVEROVERLAY\(([^\)]+)\)(.*)\n/g,
       (match, alt, url, hoverurl, rest) => {
         const simple = rest.includes('simple');
         var fsHoverURL = path.join(parentpath, hoverurl);
