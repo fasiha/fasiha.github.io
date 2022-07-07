@@ -258,3 +258,7 @@ div.img-svg svg{position:absolute; margin:0; padding:0; top:0; left:0;}
 div.img-svg svg {opacity:0}
 div.img-svg svg:hover {opacity:1}
 div.img-svg svg:active {opacity:1}
+img.top-banner-image {
+  width: auto;
+  height: auto;
+}

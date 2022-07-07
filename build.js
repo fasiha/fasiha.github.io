@@ -18,6 +18,7 @@ var readFileAsync = fs.readFileAsync;
 var writeFileAsync = fs.writeFileAsync;
 var appendFileAsync = fs.appendFileAsync;
 var spawnPromise = require('./spawn-promise.js');
+var spawnSync = require('child_process').spawnSync;
 
 var svgOverlay = require('./svgOverlay');
 
@@ -175,7 +176,7 @@ function buildOneMarkdown(meta, prevMeta, nextMeta, metas) {
 
     head += '\n</head>\n';
 
-    head += meta.banner ? banner(meta.banner) : '';
+    head += meta.banner ? banner(meta.banner, filepath.split('/').slice(0, -1).join('/')) : '';
 
     if (ispost) {
       head += topnav();
@@ -293,8 +294,17 @@ function subline(meta) {
   return `<p><em>${text}</em></p>`;
 }
 
-function banner(url) {
-  return `<figure class="full-width no-top"><img src="${url}"></figure>`;
+function banner(url, parentPath) {
+  const [w, h] = imageToSize((parentPath + '/' + url).replace(/^\//, ''));
+  return `<figure class="full-width no-top"><img class="top-banner-image" src="${url}" width="${w}" height="${h}"></figure>`;
+}
+
+function imageToSize(imagepath) {
+  console.log(imagepath)
+  return spawnSync('identify', [ imagepath ],
+                   {input : undefined, encoding : 'utf8'})
+      .stdout.split(/\s+/)[2]
+      .split('x');
 }
 
 function headline(title) { return `<h1>${title}</h1>`; }
