@@ -29,10 +29,9 @@ function filepathToAbspath(filepath) {
 }
 function filepathToURL(filepath) { return URL + filepathToAbspath(filepath); }
 
-var plotlyPreamble =
-    `<script src="${
-                    filepathToAbspath('assets/plotly-basic-1.27.1.min.js')
-                  }" charset="utf-8"></script>\n`;
+var plotlyPreamble = `<script src="${
+    filepathToAbspath(
+        'assets/plotly-basic-1.27.1.min.js')}" charset="utf-8"></script>\n`;
 
 var mathjaxPreamble = `<script type="text/x-mathjax-config">
 MathJax.Hub.Config({
@@ -157,8 +156,8 @@ function buildOneMarkdown(meta, prevMeta, nextMeta, metas) {
     var head = '<!doctype html>\n<head><meta charset="utf-8" />\n';
     head += `<title>${meta.title}</title>\n`;
     head += `<link href="${
-                           filepathToAbspath('atom.xml')
-                         }" type="application/atom+xml" rel="alternate" />\n`;
+        filepathToAbspath(
+            'atom.xml')}" type="application/atom+xml" rel="alternate" />\n`;
     head += social(outfile, meta.title, meta.description,
                    meta.socialBanner || meta.banner, meta.outfile);
     head += `<link href="${pathToCss}" rel="stylesheet">`;
@@ -176,7 +175,10 @@ function buildOneMarkdown(meta, prevMeta, nextMeta, metas) {
 
     head += '\n</head>\n';
 
-    head += meta.banner ? (await banner(meta.banner, filepath.split('/').slice(0, -1).join('/'))) : '';
+    head += meta.banner
+                ? (await banner(meta.banner,
+                                filepath.split('/').slice(0, -1).join('/')))
+                : '';
 
     if (ispost) {
       head += topnav();
@@ -197,7 +199,7 @@ function buildOneMarkdown(meta, prevMeta, nextMeta, metas) {
 
   Promise.all([ headHtmlPromise, postIndexP, footPromise ])
       .then(([ [ head, html ], postIndex, foothtml ]) => {
-        console.log('done '+ outfile);
+        console.log('done ' + outfile);
         writeFileAsync(outfile, '')
             .then(() => appendFileAsync(outfile, head))
             .then(() => appendFileAsync(outfile, postIndex))
@@ -210,9 +212,8 @@ function prevNextToFootPromise(prevMeta, nextMeta) {
   if (prevMeta || nextMeta) {
     var foot = `<p><small>`;
     if (prevMeta) {
-      foot += `Previous: [${
-                            prevMeta.title
-                          }](${filepathToAbspath(prevMeta.outfile)})<br>`;
+      foot += `Previous: [${prevMeta.title}](${
+          filepathToAbspath(prevMeta.outfile)})<br>`;
     }
     if (nextMeta) {
       foot +=
@@ -237,19 +238,19 @@ function metasTopostIndexPromise(metas) {
   var md =
       '## All posts\n' +
       metas
-          .map(meta => `- [${meta.title}](${
-                                            filepathToAbspath(meta.outfile)
-                                          }) (${
-                                                shortDate(meta.date)
-                                              }, ${meta.tags.join('/')})\n`)
+          .map(meta =>
+                   `- [${meta.title}](${filepathToAbspath(meta.outfile)}) (${
+                       shortDate(meta.date)}, ${meta.tags.join('/')})\n`)
           .join('');
   md += `\n(<a href="${filepathToAbspath('atom.xml')}">Feed</a>)`
   return spawnPromise(
-      spawn('pandoc',
-            [
-              '-f', 'markdown_github-hard_line_breaks+markdown_in_html_blocks+auto_identifiers',
-              '-t', 'html5'
-            ]),
+      spawn(
+          'pandoc',
+          [
+            '-f',
+            'markdown_github-hard_line_breaks+markdown_in_html_blocks+auto_identifiers',
+            '-t', 'html5'
+          ]),
       md);
 }
 
@@ -296,11 +297,13 @@ function subline(meta) {
 
 async function banner(url, parentPath) {
   const [w, h] = await imageToSize((parentPath + '/' + url).replace(/^\//, ''));
-  return `<figure class="full-width no-top"><img class="top-banner-image" src="${url}" width="${w}" height="${h}"></figure>`;
+  return `<figure class="full-width no-top"><img class="top-banner-image" src="${
+      url}" width="${w}" height="${h}"></figure>`;
 }
 
 function imageToSize(imagepath) {
-  return spawnPromise(spawn('identify', [ imagepath ])).then(s=>s.split(/\s+/)[2].split('x'));
+  return spawnPromise(spawn('identify', [ imagepath ]))
+      .then(s => s.split(/\s+/)[2].split('x'));
 }
 
 function headline(title) { return `<h1>${title}</h1>`; }

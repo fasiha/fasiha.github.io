@@ -147,7 +147,6 @@ function mkImgSvgContainerSimple(imagepath, alt, svgContents, fsImagePath) {
   </div>`;
 }
 
-
 function imageToSize(imagepath) {
   return spawnSync('identify', [ imagepath ],
                    {input : undefined, encoding : 'utf8'})
@@ -155,8 +154,10 @@ function imageToSize(imagepath) {
       .split('x');
 }
 
-function wrapFigure(contents, alt, url, hoverurl, links=undefined) {
-  if(links === undefined) { links= ` (<a href="${url}">JPG</a>, <a href="${hoverurl}">SVG</a>)`; }
+function wrapFigure(contents, alt, url, hoverurl, links = undefined) {
+  if (links === undefined) {
+    links = ` (<a href="${url}">JPG</a>, <a href="${hoverurl}">SVG</a>)`;
+  }
   return `<figure>
   ${contents}
   <figcaption>${alt}${links}</figcaption>
@@ -177,9 +178,10 @@ function markdownToHtml(md, parentpath) {
         var fsURL = path.join(parentpath, url);
         return '\n' +
                unindentHtml(wrapFigure(
-                   simple 
-                    ? mkImgSvgContainerSimple(url, alt, fs.readFileSync(fsHoverURL), fsURL) 
-                    : mkImgSvgContainer(url, alt, svgpathToSvgNodes(fsHoverURL), fsURL),
+                   simple ? mkImgSvgContainerSimple(
+                                url, alt, fs.readFileSync(fsHoverURL), fsURL)
+                          : mkImgSvgContainer(
+                                url, alt, svgpathToSvgNodes(fsHoverURL), fsURL),
                    alt, url, hoverurl, simple ? "" : undefined)) +
                '\n';
       });
