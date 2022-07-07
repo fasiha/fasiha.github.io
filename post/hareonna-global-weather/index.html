@@ -1,0 +1,172 @@
+<!doctype html>
+<head><meta charset="utf-8" />
+<title>Hareonna: visualize weather around the world</title>
+<link href="/atom.xml" type="application/atom+xml" rel="alternate" />
+<meta name="description" content="Intuitively visualize temperatures from the 13’500+ weather stations in the Global Historical Climatology Network daily (GHCNd) database, find the places with your favorite weather" />
+<meta name="twitter:card" value="summary">
+<meta property="og:title" content="Hareonna: visualize weather around the world" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="post/hareonna-global-weather/index.html" />
+<meta property="og:image" content="https://fasiha.github.io/post/hareonna-global-weather/pouring-rain.jpg" />
+<meta property="og:description" content="Intuitively visualize temperatures from the 13’500+ weather stations in the Global Historical Climatology Network daily (GHCNd) database, find the places with your favorite weather" />
+<link href="../../assets/modest.css" rel="stylesheet">
+</head>
+<figure class="full-width no-top"><img class="top-banner-image" src="pouring-rain.jpg" width="2000" height="300"></figure>  <ul class="top-nav">
+    <li><a href="/">Blog</a></li>
+    <li><a href="/#contact">Contact</a></li>
+    <li><a href="/atom.xml">Feed</a></li>
+  </ul><h1>Hareonna: visualize weather around the world</h1><p><em>Updated on Thu, 07 Jul 2022 05:56:04 GMT, tagged with ‘weather’—‘maps’—‘tech’.</em></p><p><link rel="stylesheet" type="text/css" href="here.css"></p>
+<p><strong><em>tl;dr: check out my app <a href="https://fasiha.github.io/hareonna">Hareonna</a>!</em></strong></p>
+<p>I’ve lived in a few different regions of the world and thus have appreciated various climates over the years, but it wasn’t until we moved to California’s Bay Area, by San Francisco, that I got really curious about the universe of weather on the globe—because the Bay weather is <em>so</em> unique. It’s not usually warm, it doesn’t rain much, but the wind is always blowing and the fog is always rolling. Where else has this kind of weather? And what other kinds of climates are there that I don’t know about?</p>
+<p>Wikipedia articles on cities tend to have tabular summaries of weather broken down by month, which I have often referred to, e.g.,</p>
+<figure>
+<a href="./wiki-climate.png"><img src="./wiki-climate.png" alt="San Francisco climate table" /></a>
+<figcaption>
+<a href="https://en.wikipedia.org/wiki/San_Francisco#Climate">San Francisco climate table</a>
+</figcaption>
+</figure>
+<p>and this often answers some questions, about <em>this</em> city, but leaves me with more question about how this city compares to <em>others</em>.</p>
+<p>So with all this in mind, I began working with the <a href="https://www.ncei.noaa.gov/products/land-based-station/global-historical-climatology-network-daily">GHCNd</a> (Global Historical Climatology Network daily) database of weather station data, some of which goes back a hundred+ years. There’s <em>so</em> much you could do with this data but I want to skip to an app I wrote to visualize the temperature percentiles, <em>highs</em> and <em>lows</em>, for the ~13’500 weather stations with daily temperatures recorded for the last three years.</p>
+<p>The web app is called <a href="https://fasiha.github.io/hareonna">Hareonna</a> and it lets me make plots like this (tap/click or swipe/scroll right):</p>
+<div class="wide">
+<figure>
+<a href="./sfo-dca-cmh-my-in.png"><img src="./sfo-dca-cmh-my-in.png" alt="Five Hareonna profiles" /></a>
+<figcaption>
+Five Hareonna profiles
+</figcaption>
+</figure>
+</div>
+<p>(Here’s the <a href="https://fasiha.github.io/hareonna/#s:USW00023234,s:USW00013743,s:USW00014821,s:MYM00048674,s:IN022043500">direct URL for this view</a>, which also shows the above data in a tabular form.)</p>
+<p>This shows the temperature profiles at five weather stations close to where I’ve lived—</p>
+<ul>
+<li>Bay Area (SFO airport),</li>
+<li>the East Coast, Washington, DC area (IAD airport),</li>
+<li>the Midwest (CMH airport),</li>
+<li>coastal southeast Malaysia,</li>
+<li>coastal southeast India, near where I grew up.</li>
+</ul>
+<p>The two lines in each panel are highs and lows, with Celsius on the y-axis. The x-axis is interesting because it’s <em>percentiles</em>: a number between 0 and 100.</p>
+<ul>
+<li>0%ile means the all-time minimum in the three-year data window,</li>
+<li>10%ile means the temperature (high and low) is lower than this 10% of the time, 36 days, 5~ish weeks. Conversely, it’s higher than this the rest of the year.</li>
+<li>50%ile is the median: the temperature (high and low) is less than this half the year and more than this half the year.</li>
+<li>75%ile means the temperature (high and low) is less than this nine months of the year, i.e., greater than this three months of the year.</li>
+<li>100%ile means the all-time maximum in the three-year data window.</li>
+</ul>
+<p>So each line will always increase, but the two lines’ shape tends to fall in a few patterns.</p>
+<ul>
+<li>The East Coast and Midwest examples above are emblematic of much of the US: mostly parallel diagonal strips.</li>
+<li>A lot of the tropics is like the Malaysian and Indian examples: more horizontal than diagonal.</li>
+<li>The Bay Area is another archetype: a tilted tilde/wave dash 〜.</li>
+</ul>
+<p>For ease of comparison, the app puts the first temperature profile underneath the rest of them. The three horizontal lines, at 10, 20, and 30 °C, are hardcoded also to facilitate comparison across different climates.</p>
+<p>Because weather is so geographic, the app has a strong map component. You can see all 13’500 weather stations on an OpenStreetMap (clustered into groups based on zoom to avoid visual and computer overload), select one, and add it to the temperature percentile plot.</p>
+<p>So. Where else has weather similar to San Francisco? Well, Hareonna can answer that question, in a simplistic way, by finding the weather stations with the most similar temperature percentiles. I picked the SFO station, and clicked the “Find similar” button three times to get this: a map with the sixty stations most similar to SFO, indicated by lines emanating from there:</p>
+<figure>
+<a href="./sfo-similar-map.jpg"><img src="./sfo-similar-map.jpg" alt="Sixty weather stations most similar to SFO" /></a>
+<figcaption>
+Sixty weather stations most similar to SFO
+</figcaption>
+</figure>
+<blockquote>
+<p>(You can ignore the red/orange/green circles with numbers in them: those are clusters of stations, and are unrelated to the lines connecting SFO to the most similar weather stations. And I implore you to forgive me my sin of using the Web Mercator projection 💩, there are some tech notes below where I explain myself 😭.)</p>
+</blockquote>
+<p>And here are the fifteen most similar compared to the SFO airport station in the temperature percentile plot (again, tap/click or swipe/scroll right):</p>
+<div class="wide">
+<figure>
+<a href="./sfo-similar.png"><img src="./sfo-similar.png" alt="Top fifteen stations similar to SFO" /></a>
+<figcaption>
+Top fifteen stations similar to SFO
+</figcaption>
+</figure>
+</div>
+<p>But this map above is most intriguing! I’d previously heard anecdotes that (a) New Zealand’s Cook Strait between the two big islands, and (2) northern Portugal both had that cool, wind, fog story that San Francisco has, and there’s certainly a lot of corroboration in this! However, some surprises:</p>
+<p>Southern Australia, both southwest and especially the southeast, also have strong representation.</p>
+<p>The western South African coast north of Cape Town is <em>also</em> quite similar to San Francisco temperatures—but not Cape Town itself! Here’s a look at San Francisco’s temperature percentile plot compared to four coastal South African stations (<a href="https://fasiha.github.io/hareonna/#s:USW00023234,s:SF000068712,s:SFM00068816,s:SF000068920,s:SF000288380">direct link</a>):</p>
+<div class="wide">
+<figure>
+<a href="./sfo-south-africa.png"><img src="./sfo-south-africa.png" alt="SFO vs four South African coastal weather stations in orange circles" /></a>
+<figcaption>
+SFO vs four South African coastal weather stations in orange circles
+</figcaption>
+</figure>
+</div>
+<figure>
+<a href="./south-africa-map.png"><img src="./south-africa-map.png" alt="Locations of the four South African stations" /></a>
+<figcaption>
+Locations of the four South African stations
+</figcaption>
+</figure>
+<p>Some like Cape Columbine and Cape Agulhas are similar to San Francisco in that they have that tilted 〜 tilde shape (especially Cape Agulhas might be attractive for those who find the Bay a bit too chilly?). Cape Town and George Airport are <em>thick</em> bands in the plots: Cape Town’s lows and highs at each percentile can vary 10 to almost 15 °C!</p>
+<p>And if you click on “Find similar” for Cape Agulhas, the southernmost highlighted weather station in the map above, you get some truly diverse locations with similar weather: Los Angeles to Sydney, Peru to the eastern Atlantic!</p>
+<figure>
+<a href="./cape-agulhas.jpg"><img src="./cape-agulhas.jpg" alt="Twenty weather stations most similar to Cape Agulhas in South Africa" /></a>
+<figcaption>
+Twenty weather stations most similar to Cape Agulhas in South Africa
+</figcaption>
+</figure>
+<hr />
+<p>Hareonna came in handy when a friend from New York City mentioned they were emigrating to Asia, and had offers in both Hong Kong and Singapore. After asking all the usual questions, I was curious about the weather change (<a href="https://fasiha.github.io/hareonna/#s:USW00094728,s:MCM00045011,s:SNM00048698">direct link</a>):</p>
+<figure>
+<a href="./nyc-macau-singapore.png"><img src="./nyc-macau-singapore.png" alt="New York City, Macau, Singapore" /></a>
+<figcaption>
+New York City, Macau, Singapore
+</figcaption>
+</figure>
+<p>🥵! Macau is the closest weather station to Hong Kong in the GHCNd database, just across the Pearl River Delta—less than two hours by bus. Macau/Hong Kong at least has three months of the year where the highs are less than 25 °C. Singapore of course is thoroughly tropical: it’s coolest high in the three years of data is 25 °C! Both are of course worlds away from Manhattan’s Central Park weather station (which is quite similar to both the Ohio and Washington DC weather stations we started with), the only similarities being the overlap at the very top-right of each plot.</p>
+<p>I better not get used to San Francisco’s weather, where it exceeds 25 °C just <em>five weeks</em> of the year!</p>
+<hr />
+<p>Something that I strongly appreciate having lived in the Bay Area for a while is how <em>local</em> weather can be. Climbing to the top of San Bruno Mountain (<a href="https://www.openstreetmap.org/node/358774522#map=13/37.6626/-122.4267">OpenStreetMap</a> link), I can <em>see</em> the chilly fog enveloping Daly City to Richmond to downtown while the East Bay is sweltering in heat. I sometimes drive half-hour south to San Mateo’s wonderful East Asian restaurants and it’s distinctly <em>hot</em> compared to San Francisco. I drive another half-hour south to San Jose’s wonderful South Indian restaurants, and it’s <em>too</em> hot.</p>
+<p>Why is that?</p>
+<p>KQED has a story, <a href="https://www.kqed.org/news/11827882/why-does-the-bay-area-have-so-many-microclimates">Why Does The Bay Area Have So Many Microclimates?</a>, and it touches on a few factors important to the city proper, but I think it’s straightforward to generalize the physical and marine geography.</p>
+<p>Here’s the Bay’s terrain, <a href="../texshade">texture-shaded</a>, superimposed on OpenStreetMap:</p>
+<figure>
+<div class="img-svg">
+<a href="./bay-300.jpg"> <img src="./bay-300-small.jpg" alt="The Bay Area: map with terrain; press/hover for annotations, click for high-resolution" /> <?xml version="1.0"?> <svg width="566" height="566" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"> <!-- Created with SVG-edit - https://github.com/SVG-Edit/svgedit-->
+<title>
+Bay Area annotations
+</title>
+<g class="layer">
+<title>
+Layer 1
+</title>
+<rect fill="#000000" fill-opacity="0" height="181" id="svg_2" stroke="#ffffff" stroke-linejoin="round" stroke-opacity="0.5" stroke-width="4" transform="matrix(1 0 0 1 0 0)" width="182" x="19" y="110"/> <text fill="#ffffff" font-family="Serif" font-size="24" id="svg_3" stroke="#000000" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="0" text-anchor="middle" x="110" xml:space="preserve" y="137">Full Pacific wind</text> <ellipse cx="333.54" cy="446.31" fill="#000000" fill-opacity="0" id="svg_4" rx="72" ry="228.25" stroke="#ffffff" stroke-linecap="null" stroke-linejoin="round" stroke-opacity="0.5" stroke-width="4" transform="matrix(1 0 0 1 0 0) rotate(-51.397 333.537 446.305)"/> <text fill="#ffffff" font-family="Serif" font-size="24" id="svg_6" stroke="#000000" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="0" text-anchor="middle" transform="matrix(1 0 0 1 0 0) rotate(39.7376 365 426)" x="365" xml:space="preserve" y="434">Airflow blocked by Coastal Ranges</text> </g> </svg> </a>
+</div>
+<figcaption>
+The Bay Area: map with terrain; press/hover for annotations, click for high-resolution
+</figcaption>
+</figure>
+<p>Long-press or hover over the above map to see my annotations but even without them, you may be able to see why South San Francisco, Daly City, and San Francisco proper all might be chilly, windy, and foggy, while areas south like San Mateo and definity by Palo Alto are warmer and drier: the Coastal Ranges that begin just south of Daly City put some ten kilometers of mountains between the Pacific and the cities along the Bay.</p>
+<p>Here’s a <a href="./bay-300.jpg">high-res 300 dpi render</a>, which I hope you’ll take a look at: both are made from USGS’ delicious <a href="https://www.sciencebase.gov/catalog/item/581d2938e4b08da350d61140">NED ⅑″ topo-bathymetry</a> of the Bay Area—one-ninth of an arcsecond is a pixel every <em>three</em> meters. Which is stunning: the widely used SRTM terrain dataset is a pixel every <em>thirty</em> meters (and is the data used by my <a href="../texshade">Texture-Shaded Globe</a>).</p>
+<blockquote>
+<p>(My fellow GIS lovers: QGIS didn’t export PGW files for these layout renders, so bear with me: x min/max -122.543° to -121.938, y min/max 37.333° to 37.938°.)</p>
+</blockquote>
+<hr />
+<p><a href="https://fasiha.github.io/hareonna">Hareonna</a> is very raw and young, and there are so many directions it could go in. What’s next? In no particular order:</p>
+<ul>
+<li>I’d love to be able to see a heatmap of areas of the globe that are more or less similar to a particular station.</li>
+<li>I’d absolutely love to see precipitation data, which is crucially important in California.</li>
+<li>Everything in the app is pre-computed (all the percentiles and weather station locations). But I’d like to be able to fetch the daily data from NOAA’s servers in the app to show a line graph of temperatures.</li>
+<li>I’d love to find a way to deal with the missing information in many of these.</li>
+<li>I’d like to integrate other data sources: GHCNd doesn’t have a single weather station in Taiwan. You can <a href="https://www.ncei.noaa.gov/maps/">check</a>; and, I’ve <a href="https://twitter.com/gratidue/status/1539320097189163009">asked for help</a> (<a href="https://nitter.eu/gratidue/status/1539320097189163009">Nitter URL</a>).</li>
+<li>More data in general. My phone’s weather app can show five cities’ real-time temperatures between San Francisco International airport and Redwood City: why are those not in GHCNd? Is that data proprietary?</li>
+</ul>
+<p>I am quite pleased with the visualization technique created for Hareonna—the percentile highs and lows, and I’d be most gratified if it became a popular way to roughly show annual temperature profiles. I’m also curious how it can be improved.</p>
+<hr />
+<p>A few tech notes follow.</p>
+<p>At the insistence of NoScript-loving friends on social media, I finally investigated React.js’ server-side rendering (SSR), via Next.js, and built Hareonna with that. Verdict: 10/10, will build every app in the foreseeable future with Next. But Next and pnpm and even React are really power-tools: I had to use some fairly intricate JavaScript magic to get these to play nicely with all parts of the app, so I’m a bit wary of recommending it to beginner web developers. Specifically, it was not straightforward to integrate with Leaflet, which is the library that does all the mapping.</p>
+<p>Leaflet: ✅. Yes, Web Mercator is 💩, and in an ideal world, I’d have used D3’s <a href="https://observablehq.com/@d3/world-tour">orthographic projection</a> or <a href="https://sandcastle.cesium.com/">Cesium.js</a>’ WebGL globe, but Leaflet’s API and ecosystem, along with OpenStreetMap, made it straightforward to go from idea in my head to app in my hands, and that cannot be overstated. In Joseph Gentle’s breaking down of coders into <a href="https://josephg.com/blog/3-tribes/">three tribes</a>, makers, hackers, and poets, I very much see myself first and foremost as a <strong>maker</strong>, but with a weakness of absent-mindedly accidentally writing code I didn’t want to write. Thus, I hugely value Jamie Brandon’s memorable phrasing:</p>
+<blockquote>
+<p><em>If you have a mountain of shit to move, how much time should you spend looking for a bigger shovel?</em> There's no obviously correct answer—it must depend on the size of the mountain, the availability of large shovels, how quickly you have to move it etc. <em>But the answer absolutely cannot be 100% of your time.</em> <strong>At some point you have to shovel some shit.</strong> —Jamie Brandon, <a href="https://www.scattered-thoughts.net/writing/things-unlearned/">Things Unlearned</a></p>
+</blockquote>
+<p>Leaflet is a solid grimoire for the code magician: Sarah Drasner recently <a href="https://twitter.com/sarah_edo/status/1544518772702121984">tweeted</a> (<a href="https://nitter.eu/sarah_edo/status/1544518772702121984">Nitter alternative</a>):</p>
+<blockquote>
+<p>I will never get over the magic of programming: 3 days ago I had an idea, and now I have a useful, functioning app.</p>
+</blockquote>
+<p>Hareonna also uses <a href="https://nominatim.openstreetmap.org/ui/search.html">OpenStreetMap’s Nominatim</a> API for converting user-provided locations to lat/lon coordinates to zoom into. I love OpenStreetMap—what a monumental achievement!</p>
+<p>Finally, I’d like to note that GHCNd is a good candidate for developers looking for code katas in data munging with a large web-based database. If someone’s interested in using GHCNd as part of their interview, or just in formalizing a sequence of katas based on the database, <a href="/#contact">get in touch</a>!</p>
+<hr />
+<p>(Banner: crop from <a href="https://flic.kr/p/2kJTcaM">David Yu’s Flickr</a>: “Pouring Rain”, San Francisco, 2021)</p>
+<p>
+<small>Previous: <a href="/post/galef-calibration/">Announcing: Devastate—calibrating uncertainty via trivia</a><br></small>
+</p>

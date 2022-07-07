@@ -9,267 +9,7 @@
 <meta property="og:url" content="post/galef-calibration/index.html" />
 <meta property="og:image" content="https://fasiha.github.io/post/galef-calibration/bloomsberries-2005-wto.jpg" />
 <meta property="og:description" content="A web version of the exercise proposed by Julia Galef in “The Scout Mindset”" />
-<style>@media print {
-  *,
-  *:before,
-  *:after {
-    background: transparent !important;
-    color: #000 !important;
-    box-shadow: none !important;
-    text-shadow: none !important;
-  }
-
-  a,
-  a:visited {
-    text-decoration: underline;
-  }
-
-  a[href]:after {
-    content: " (" attr(href) ")";
-  }
-
-  abbr[title]:after {
-    content: " (" attr(title) ")";
-  }
-
-  a[href^="#"]:after,
-  a[href^="javascript:"]:after {
-    content: "";
-  }
-
-  pre,
-  blockquote {
-    border: 1px solid #999;
-    page-break-inside: avoid;
-  }
-
-  thead {
-    display: table-header-group;
-  }
-
-  tr,
-  img {
-    page-break-inside: avoid;
-  }
-
-  img {
-    max-width: 100% !important;
-  }
-
-  p,
-  h2,
-  h3 {
-    orphans: 3;
-    widows: 3;
-  }
-
-  h2,
-  h3 {
-    page-break-after: avoid;
-  }
-  .parallax {
-    background-attachment: scroll;
-  }
-}
-
-pre,
-code {
-  font-family: Menlo, Monaco, Consolas, Inconsolata, "Andale Mono", "Fira Code", "Lucida Console", "Lucida Sans Typewriter", "Courier New", monospace;
-}
-
-pre {
-  padding: .5rem;
-  line-height: 1.25;
-  overflow-x: scroll;
-}
-
-a,
-a:visited {
-  color: #3498db;
-}
-
-a:hover,
-a:focus,
-a:active {
-  color: #2980b9;
-}
-
-.modest-no-decoration {
-  text-decoration: none;
-}
-
-html {
-  font-size: 12px;
-}
-
-@media screen and (min-width: 32rem) and (max-width: 48rem) {
-  html {
-    font-size: 15px;
-  }
-}
-
-@media screen and (min-width: 48rem) {
-  html {
-    font-size: 16px;
-  }
-}
-
-body {
-  line-height: 1.85;
-}
-
-p,
-.modest-p {
-  font-size: 1rem;
-  margin-bottom: 1.3rem;
-}
-
-h1,
-.modest-h1,
-h2,
-.modest-h2,
-h3,
-.modest-h3,
-h4,
-.modest-h4 {
-  margin: 1.414rem 0 .5rem;
-  font-weight: inherit;
-  line-height: 1.42;
-}
-
-h1,
-.modest-h1 {
-  margin-top: 0;
-  font-size: 3.998rem;
-}
-
-h2,
-.modest-h2 {
-  font-size: 2.827rem;
-}
-
-h3,
-.modest-h3 {
-  font-size: 1.999rem;
-}
-
-h4,
-.modest-h4 {
-  font-size: 1.414rem;
-}
-
-h5,
-.modest-h5 {
-  font-size: 1.121rem;
-}
-
-h6,
-.modest-h6 {
-  font-size: .88rem;
-}
-
-small,
-.modest-small {
-  font-size: .707em;
-}
-
-/* https://github.com/mrmrs/fluidity */
-
-img,
-canvas,
-iframe,
-video,
-svg,
-select,
-textarea {
-  max-width: 100%;
-}
-
-html {
-  font-size: 18px;
-  max-width: 100%;
-  height: 100%;
-}
-
-body {
-  height: 100%;
-  color: #444;
-  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  font-weight: 300;
-  margin: 0 auto;
-  max-width: 48rem;
-  line-height: 1.45;
-  padding: 0 .25rem .25rem;
-}
-
-h1,
-h2,
-h3 {
-  border-bottom: 2px solid #fafafa;
-  margin-bottom: 1.15rem;
-  padding-bottom: .5rem;
-  text-align: center;
-}
-
-blockquote {
-  border-left: 8px solid #fafafa;
-  padding: 0.1em 1rem;
-}
-
-pre,
-code {
-  background-color: #fafafa;
-}
-
-figure {
-  position: relative;
-  text-align: center;
-}
-figcaption {
-  color: #999;
-  font-size: 0.9em;
-  margin-top: 0.5em;
-}
-
-/* https://css-tricks.com/full-width-containers-limited-width-parents/ */
-.full-width {
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-}
-.no-top {
-  margin-top: 0px;
-  padding-top:0px;
-}
-ul.top-nav {
-  padding-left: 0;
-}
-ul.top-nav li {
-  display: inline;
-  list-style-type: none;
-  padding-right: 1em;
-}
-table{
-  border-spacing: 0;
-  border-collapse: collapse;
-}
-table th, table td{
-  border: 1px solid #eee;
-  padding: 6px 13px;
-}
-table tr:nth-child(2n) {
-  background-color: #f6f8f6;
-}
-div.img-svg{position: relative; display: inline-block;}
-div.img-svg img{display: block;max-width: 100%; height: auto;}
-div.img-svg svg{position:absolute; margin:0; padding:0; top:0; left:0;}
-svg.overlay {opacity:0}
-svg.overlay:hover {opacity:1}
-</style>
-<style>/* Tomorrow Night Eighties Theme */
+<link href="../../assets/modest.css" rel="stylesheet"><style>/* Tomorrow Night Eighties Theme */
 /* Original theme - https://github.com/chriskempson/tomorrow-theme */
 /* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
 
@@ -346,7 +86,7 @@ svg.overlay:hover {opacity:1}
 </style>
 
 </head>
-<figure class="full-width no-top"><img src="bloomsberries-2005-wto.jpg"></figure>  <ul class="top-nav">
+<figure class="full-width no-top"><img class="top-banner-image" src="bloomsberries-2005-wto.jpg" width="640" height="255"></figure>  <ul class="top-nav">
     <li><a href="/">Blog</a></li>
     <li><a href="/#contact">Contact</a></li>
     <li><a href="/atom.xml">Feed</a></li>
@@ -374,7 +114,7 @@ svg.overlay:hover {opacity:1}
 <blockquote>
 <p>As you go through the list, you should notice your level of certainty fluctuating. Some questions might feel easy, and you’ll be near certain of the answer. Others may prompt you to throw up your hands and say, ‘I have no idea!’ That’s perfectly fine. Remember, the goal isn’t to know as much as possible. It’s to know how much you know.</p>
 </blockquote>
-<p>This is like <em>catnip</em> to me—ever since reading <em>Fooled by Randomness</em> when it came out in 2002, then studying statistical signal processing, and eventually joining the finance industry, I’ve thought about the challenges and rewards of skill in converting uncertainty into action. So I was reading this literally in the middle of the night in bed on my phone, so I… copied the text of the fourty questions from the ebook into my phone’s Notes app, answered the questions, and manually tallied my score:</p>
+<p>This is like <em>catnip</em> to me—ever since reading <em>Fooled by Randomness</em> when it came out in 2002, then studying statistical signal processing, and eventually joining the finance industry, I’ve thought about the challenges and rewards of skill in converting uncertainty into action. So I was reading this literally in the middle of the night in bed on my phone, so I… copied the text of the forty questions from the ebook into my phone’s Notes app, answered the questions, and manually tallied my score:</p>
 <figure>
 <a href="./notes.jpg"><img src="./notes.jpg" alt="Screenshot of my Notes app, with timestamp: March 1, 2020, 01:12 (local time)"></a>
 <figcaption>
@@ -388,7 +128,7 @@ Screenshot of my Notes app, with timestamp: March 1, 2020, 01:12 (local time)
 Screenshot of the output of Devastate
 </figcaption>
 </figure>
-<p>Same story as the book: you answer fourty trivia questions, picking your uncertainty surrounding each, and the app will spit out a graph with five dots—your expected versus actual uncertainty—plus a couple of confidence interval bands.</p>
+<p>Same story as the book: you answer forty trivia questions, picking your uncertainty surrounding each, and the app will spit out a graph with five dots—your expected versus actual uncertainty—plus a couple of confidence interval bands.</p>
 <p>You can share the URL with your friends: here’s the <a href="https://fasiha.github.io/devastate/#v1-14101103111310011013141200041314041000020003010103001000041014021100141303140402">link</a> to my answers and results.</p>
 <p>Please play the game and read the book!</p>
 <h2 id="future-directions-proportions">Future directions: proportions</h2>
@@ -476,10 +216,10 @@ Examples of continuous binominal distribution density
 <p>For example, a counter-argument to the idea that one needs to be hyper-optimistic and not acknowledge realistic probabilities of failure to be successful.</p>
 <p>Julia's chapter on this uses a broader array of examples than I would've and is written to appeal to a wider audience, but, in appealing to a broader audience, the chapter doesn't sacrifice intellectual rigorousness.</p>
 <p>When that's possible, I view that as basically strictly better than how I write and I would write that way if I knew how in a time-efficient way.</p>
-<p>One thing I find amusing is that a lot of the negative reviews on Amazon seem to conflate having a difficult to read style with rigor and they knock the book for being unscientific or shallow because it's easy to read, like</p>
+<p>One thing I find amusing is that a lot of the negative reviews on Amazon seem to conflate having a difficult to read style with rigor and they knock the book for being unscientific or shallow because it's easy to read…</p>
 </blockquote>
 <hr>
 <p>(Banner: crop from <a href="https://flic.kr/p/7LDp4">@bloomsberries’ Flickr</a>: “balance scale: free trade v humans”. 2005 anti-WTO protest art in Victoria Park, Hong Kong)</p>
 <p>
-<small>Previous: <a href="/post/excess-returns/">A look at S&amp;P 500's real excess return over Treasuries</a><br></small>
+<small>Previous: <a href="/post/excess-returns/">A look at S&amp;P 500's real excess return over Treasuries</a><br>Next: <a href="/post/hareonna-global-weather/">Hareonna: visualize weather around the world</a></small>
 </p>

@@ -1,6 +1,6 @@
 ---
 date: '2017-05-06T14:29:44-04:00'
-description: 'Code – Math – Food – Family. By Ahmed Fasih.'
+description: 'Ahmed Fasih’s corner.'
 title: 'Insight ≠ Numbers'
 banner: 'glen-helen.jpg'
 ---

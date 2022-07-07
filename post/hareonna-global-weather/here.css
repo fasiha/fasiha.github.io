@@ -1,0 +1,6 @@
+.wide figure {
+  overflow-x: scroll;
+}
+.wide img {
+  max-width: unset;
+}

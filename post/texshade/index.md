@@ -102,7 +102,7 @@ Play with the controls. When you’ve had enough, come back and we’ll explain 
 
 ## Texture-shading
 
-Upcoming.
+Those wanting to play with fractional Laplacian frequency domain operators, Python, and memory-mapped finite impulse response (FIR) filtering, check out the [texshade-py](https://github.com/fasiha/texshade-py#readme) library!
 
 [crimea]: https://fasiha.github.io/texshade-cesium-viewer/#%7B%22version%22%3A0%2C%22baseLayerPicked%22%3A%7B%22name%22%3A%22The%20Black%20Marble%22%2C%22iconUrl%22%3A%22http%3A%2F%2Fmaps.aldebrn.me%2FBuild%2FCesium%2FWidgets%2FImages%2FImageryProviders%2FblackMarble.png%22%7D%2C%22baseTerrainPicked%22%3A%7B%22name%22%3A%22WGS84%20Ellipsoid%22%7D%2C%22layers%22%3A%5B%7B%22url%22%3A%22%2F%2Fcesiumjs.org%2Fblackmarble%22%2C%22isBaseLayer%22%3Atrue%2C%22alpha%22%3A1%2C%22brightness%22%3A1%2C%22contrast%22%3A1%2C%22hue%22%3A0%2C%22saturation%22%3A1%2C%22gamma%22%3A1%7D%2C%7B%22url%22%3A%22http%3A%2F%2Fmaps.aldebrn.me%2Fworld-tex-cgiar-90m%22%2C%22isBaseLayer%22%3Afalse%2C%22alpha%22%3A0.7%2C%22brightness%22%3A0.98%2C%22contrast%22%3A3%2C%22hue%22%3A0%2C%22saturation%22%3A1%2C%22gamma%22%3A3%7D%5D%2C%22terrainExaggeration%22%3A1%2C%22destination%22%3A%7B%22x%22%3A3956085.01170706%2C%22y%22%3A2658694.6040228875%2C%22z%22%3A4776774.409817503%7D%2C%22orientation%22%3A%7B%22heading%22%3A6.150109241304203%2C%22pitch%22%3A-1.5548664680704714%2C%22roll%22%3A0%7D%7D
 

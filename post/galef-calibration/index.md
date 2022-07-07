@@ -32,7 +32,7 @@ So there’s a delightful game in chapter six, “How sure are you?”, where yo
 
 > As you go through the list, you should notice your level of certainty fluctuating. Some questions might feel easy, and you’ll be near certain of the answer. Others may prompt you to throw up your hands and say, ‘I have no idea!’ That’s perfectly fine. Remember, the goal isn’t to know as much as possible. It’s to know how much you know.
 
-This is like _catnip_ to me—ever since reading _Fooled by Randomness_ when it came out in 2002, then studying statistical signal processing, and eventually joining the finance industry, I’ve thought about the challenges and rewards of skill in converting uncertainty into action. So I was reading this literally in the middle of the night in bed on my phone, so I… copied the text of the fourty questions from the ebook into my phone’s Notes app, answered the questions, and manually tallied my score:
+This is like _catnip_ to me—ever since reading _Fooled by Randomness_ when it came out in 2002, then studying statistical signal processing, and eventually joining the finance industry, I’ve thought about the challenges and rewards of skill in converting uncertainty into action. So I was reading this literally in the middle of the night in bed on my phone, so I… copied the text of the forty questions from the ebook into my phone’s Notes app, answered the questions, and manually tallied my score:
 
 ![Screenshot of my Notes app, with timestamp: March 1, 2020, 01:12 (local time)](./notes.jpg)
 
@@ -40,7 +40,7 @@ I knew I wanted friends to try this, so I made a web app version, called Devasta
 
 ![Screenshot of the output of Devastate](site.png)
 
-Same story as the book: you answer fourty trivia questions, picking your uncertainty surrounding each, and the app will spit out a graph with five dots—your expected versus actual uncertainty—plus a couple of confidence interval bands.
+Same story as the book: you answer forty trivia questions, picking your uncertainty surrounding each, and the app will spit out a graph with five dots—your expected versus actual uncertainty—plus a couple of confidence interval bands.
 
 You can share the URL with your friends: here’s the [link](https://fasiha.github.io/devastate/#v1-14101103111310011013141200041314041000020003010103001000041014021100141303140402) to my answers and results.
 
@@ -157,7 +157,7 @@ I have a pretty good system for backing up content I read online ([Yamanote](htt
 >
 > When that's possible, I view that as basically strictly better than how I write and I would write that way if I knew how in a time-efficient way.
 >
-> One thing I find amusing is that a lot of the negative reviews on Amazon seem to conflate having a difficult to read style with rigor and they knock the book for being unscientific or shallow because it's easy to read, like
+> One thing I find amusing is that a lot of the negative reviews on Amazon seem to conflate having a difficult to read style with rigor and they knock the book for being unscientific or shallow because it's easy to read…
 
 ---
 
