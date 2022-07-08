@@ -124,7 +124,11 @@ Here’s a [high-res 600 dpi render](./bay-600.jpg), which I hope you’ll take 
 - I’d like to integrate other data sources: GHCNd doesn’t have a single weather station in Taiwan. You can [check](https://www.ncei.noaa.gov/maps/); and, I’ve [asked for help](https://twitter.com/gratidue/status/1539320097189163009) ([Nitter URL](https://nitter.eu/gratidue/status/1539320097189163009)).
 - More data in general. My phone’s weather app can show five cities’ real-time temperatures between San Francisco International airport and Redwood City: why are those not in GHCNd? Is that data proprietary?
 
-I am quite pleased with the visualization technique created for Hareonna—the percentile highs and lows, and I’d be most gratified if it became a popular way to roughly show annual temperature profiles. I’m also curious how it can be improved.
+I am quite pleased with the visualization technique created for Hareonna—the percentile highs and lows—not only because it lets me see some *objective* data that I couldn’t see before, but also because it lets me communicate something more subjective to others: the bars at 10, 20, and 30 °C, the superposition of all weather stations under the first one—these elements in the design let me subtly invite people to compare Place based on weather more seriously than they tend to. As my hero danah boyd said,
+
+> Even if your data are nice and neat, the choices you make in producing a visualization of that data shape how those data will be perceived. You have the power to shape perception, whether you want to or not. There is no neutral visualization, just as there is no neutral data. Thus, in building your tools, you must account for your interlocutors. —danah boyd, [In the Pursuit of Knowledge, There Be Dragons](https://zephoria.medium.com/in-the-pursuit-of-knowledge-there-be-dragons-3a0155a5b6b4) (2021)
+
+So I’m also curious about how the temperature percentile visualization could be improved, and if it can be integrated into other meteorological data.
 
 ---
 
