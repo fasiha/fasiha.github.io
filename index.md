@@ -21,7 +21,7 @@ I’m a “he/him” (they/them ok!). 👋! Since this website has absolutely ze
 
 Electronic mail me, ***(ahmed) ΑΤ (aldebrn.me)***. 🤙 (Though, nota bene, if you ask me to work at your company, I may not respond—it sometimes takes a lot of energy to figure out how to say “no” and I sometimes can’t; also I might complain about your interview [process](https://gist.github.com/fasiha/496d78a3ce9357cdec0a18f919407d2e))
 
-I toot on [Mastodon](https://octodon.social/@22). 🐘
+I toot on <a rel="me" href="https://octodon.social/@22">Mastodon</a>. 🐘
 
 My code repos on [GitHub](https://github.com/fasiha). 🦉
 
