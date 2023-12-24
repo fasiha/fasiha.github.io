@@ -91,16 +91,13 @@
     <li><a href="/#contact">Contact</a></li>
     <li><a href="/atom.xml">Feed</a></li>
   </ul><h1>Random points on a spherical cap</h1><p><em>Updated on Fri, 19 Aug 2016 04:59:34 GMT, tagged with ‘math’—‘tech’.</em></p><p><strong>tl;dr</strong> <a href="https://github.com/fasiha/sphere-cap-random">JavaScript</a> library (<a href="https://www.npmjs.com/package/sphere-cap-random">npm</a>, and <a href="https://stackoverflow.com/a/39003745/500207">Matlab function</a>) to draw random samples from arbitrary spherical caps.</p>
-<figure>
-<div id="divPlot">
-</div>
-<figcaption>
-Interactive 3D scatterplot of samples from three spherical caps. <a href="screenshot.png">Screenshot</a>
-</figcaption>
+<figure><div id="divPlot"></div>
+<figcaption>Interactive 3D scatterplot of samples from three spherical caps. [Screenshot](screenshot.png)</figcaption>
 </figure>
 <script src="cap-random.min.js"></script>
 <script src="plotly-gl3d-1.27.1.min.js" charset="utf8"></script>
 <script src="demo.js"></script>
+
 <p>@Pedro77 <a href="http://stackoverflow.com/q/38997302/500207">posted</a> their approach to generating random points on the surface of a sphere contained in a cone emanating from the middle of the sphere—a cone pointing in a specified direction and with a specified angular extent.</p>
 <p>In other words, they wanted a way to randomly sample points from the <em>spherical cap</em> (<a href="http://mathworld.wolfram.com/SphericalCap.html">Mathworld</a>, <a href="https://en.wikipedia.org/wiki/Spherical_cap">Wikipedia</a>) parameterized by</p>
 <ul>

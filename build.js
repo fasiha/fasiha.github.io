@@ -135,11 +135,12 @@ function buildOneMarkdown(meta, prevMeta, nextMeta, metas) {
   const pathToCss = pathToTop + 'assets/modest.css';
 
   var pandocParams = [
-    '--filter', 'filter.js', '--no-highlight', '-t', 'html5', '-f',
-    'markdown_github-hard_line_breaks+yaml_metadata_block+markdown_in_html_blocks+auto_identifiers'
+    '--wrap=none', '--filter', 'filter.js', '--no-highlight', '-t', 'html5', '-f',
+    'gfm-hard_line_breaks+yaml_metadata_block'
   ];
+  const prep = preprocessMarkdown(meta.contents, meta);
   var htmlPromise = spawnPromise(spawn('pandoc', pandocParams),
-                                 preprocessMarkdown(meta.contents, meta));
+                                 prep);
 
   var headHtmlPromise = htmlPromise.then(async html => {
     if (meta.mathjax) {
@@ -210,21 +211,24 @@ function buildOneMarkdown(meta, prevMeta, nextMeta, metas) {
 
 function prevNextToFootPromise(prevMeta, nextMeta) {
   if (prevMeta || nextMeta) {
-    var foot = `<p><small>`;
+    var foot = `<p>
+<small>`;
     if (prevMeta) {
-      foot += `Previous: [${prevMeta.title}](${
-          filepathToAbspath(prevMeta.outfile)})<br>`;
+      foot += `Previous: <a href="${
+        filepathToAbspath(prevMeta.outfile)}">${prevMeta.title}</a><br>`;
     }
     if (nextMeta) {
       foot +=
-          `Next: [${nextMeta.title}](${filepathToAbspath(nextMeta.outfile)})`;
+          `Next: <a href="${filepathToAbspath(nextMeta.outfile)}">${nextMeta.title}</a>`;
     }
-    foot += '</small></p>'
+    foot += `</small>
+</p>`
     return spawnPromise(
         spawn('pandoc',
               [
+                '--wrap=none',
                 '-t', 'html5', '-f',
-                'markdown_github-hard_line_breaks+markdown_in_html_blocks'
+                'gfm-hard_line_breaks'
               ]),
         foot);
   }
@@ -247,8 +251,9 @@ function metasTopostIndexPromise(metas) {
       spawn(
           'pandoc',
           [
+            '--wrap=none',
             '-f',
-            'markdown_github-hard_line_breaks+markdown_in_html_blocks+auto_identifiers',
+            'gfm-hard_line_breaks',
             '-t', 'html5'
           ]),
       md);

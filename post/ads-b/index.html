@@ -90,7 +90,7 @@
     <li><a href="/">Blog</a></li>
     <li><a href="/#contact">Contact</a></li>
     <li><a href="/atom.xml">Feed</a></li>
-  </ul><h1>Track planes with a USB dongle</h1><p><em>Updated on Wed, 31 Aug 2016 18:53:17 GMT, tagged with ‘tech’.</em></p><p><em>(N.B. This document also lives at <a href="https://gist.github.com/fasiha/c123a9c6b6c78df7597bb45e0fed808f" class="uri">https://gist.github.com/fasiha/c123a9c6b6c78df7597bb45e0fed808f</a>.)</em></p>
+  </ul><h1>Track planes with a USB dongle</h1><p><em>Updated on Wed, 31 Aug 2016 18:53:17 GMT, tagged with ‘tech’.</em></p><p><em>(N.B. This document also lives at <a href="https://gist.github.com/fasiha/c123a9c6b6c78df7597bb45e0fed808f.">https://gist.github.com/fasiha/c123a9c6b6c78df7597bb45e0fed808f.</a>)</em></p>
 <h2 id="introduction">Introduction</h2>
 <p>I’m not very familiar with the aviation jargon (see <a href="https://www.faa.gov/nextgen/programs/adsb/faq/">FAA’s ADS-B FAQ</a>), but ADS-B is a next-gen system where aircraft are equipped with transponders that periodically broadcast their own positions and receive the reports from both other aircraft (direct air-to-air) as well as air-traffic control (ATC) ground transmitters.</p>
 <p>There are two separate ADS-B radio bands: the <em>commercial aviation</em> (CA) is at 1090 MHz while the <em>general aviation</em> (GA) is at 978 MHz. If I can be permitted a gross generalization—the former corresponds to big commercial jets and the latter to small private aircraft.</p>
@@ -113,7 +113,7 @@ $ make -j4 # omit if you will only do dump978/GA</code></pre>
 <pre class="nohighlight"><code>$ mkdir public_html/data</code></pre>
 <p>Then start a webserver that hosts the <code>public_html</code> directory. You have many choices but here’s a really simple one:</p>
 <pre class="nohighlight"><code>$ cd public_html &amp;&amp; python -m SimpleHTTPServer 8090</code></pre>
-<p>This uses Python2 to serve the current directory’s contents: browse to <a href="http://127.0.0.1:8090/gmap.html">http://127.0.0.1:8090/gmap.html</a> to see an OpenStreetMap.</p>
+<p>This uses Python2 to serve the current directory’s contents: browse to <a href="http://127.0.0.1:8090/gmap.html"><span>http://127.0.0.1:8090/gmap.html</span></a> to see an OpenStreetMap.</p>
 <p>Now, an application like dump1090 or dump978 can put data inside this directory and the map will display it.</p>
 <h3 id="run-log-and-visualize-dump1090">Run, log, and visualize dump1090</h3>
 <p>Finally, launch dump1090 and pipe its output to disk for logging:</p>
@@ -179,7 +179,7 @@ $ mkdir -p public_html/data</code></pre>
 <h3 id="start-external-webserver-1">Start external webserver</h3>
 <p>Following the same process as dump1090, we can start a webserver using plain Python2. We will choose a different port to avoid conflicts with the dump1090 webapp.</p>
 <pre class="nohighlight"><code>$ cd public_html &amp;&amp; python -m SimpleHTTPServer 8978</code></pre>
-<p>Open a browser tab to <a href="http://127.0.0.1:8978/gmap.html">http://127.0.0.1:8978/gmap.html</a>.</p>
+<p>Open a browser tab to <a href="http://127.0.0.1:8978/gmap.html"><span>http://127.0.0.1:8978/gmap.html</span></a>.</p>
 <h3 id="run-log-and-visualize-dump978">Run, log, and visualize dump978</h3>
 <p>dump978 is a little different from dump1090, in that dump978 accepts binary samples output by <code>rtl_sdr</code>, rather than doing this behind-the-scenes:</p>
 <pre class="nohighlight"><code>$ rtl_sdr -f 978000000 -s 2083334 - | ./dump978 | tee --append log.txt | ./uat2json public_html/data</code></pre>

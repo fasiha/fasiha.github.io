@@ -126,7 +126,7 @@
     vo.copy_from_slice(<span class="hljs-comment">/*...*/</span>)
 }</code></pre>
 <p>At first glance, the changes might look insignificant, but I reiterate.</p>
-<p><em>No</em> <strong>more</strong> <strong><em>indexing</em></strong>.</p>
+<p><em>No</em> <strong>more</strong> <em><strong>indexing</strong></em>.</p>
 <p>This is big. Before coding, the idea in one’s mind is, “take four-chunks, transform them into three-chunks”.</p>
 <p>Then one labors for a few seconds–minutes ironing out three separate indexes: (🏸) how many 3-chunks in the output, each corresponding to (🏑) which chunk of the input, each going to (🏏) which chunk of the output.</p>
 <p>And now, Rust—<em>Rust</em>, billed as a safe systems-level language, which I interpreted to mean “C with type inference”—lets us quite literally express our <em>initial</em> idea: we talk about <code>chunks(4)</code> of the input, and <code>chunks_mut(3)</code> of the output, and that’s it.</p>
