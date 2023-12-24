@@ -18,6 +18,18 @@ The plot below shows the real excess return of the S&P 500 over risk-free Treasu
 
 <div id="excess-all"></div>
 
+Now, for each line above, you can imagine plotting a *histogram* of returns, showing the distribution of excess real returns you can expect over 10 year, 20 year, etc. horizons.
+
+<div id="histogram"></div>
+
+Finally we can convert each histogram above to a *cumulative histogram* below. This lets us answer questions like,
+- how often does the S&P500 yield negative excess real returns over a ten year horizon? Answer: 20% of the time.
+- What's the 80-percentile real excess return for a ten year horizon? Answer: almost 10% annualized! In other words, if you plan to buy the S&P500 every month for ten years, 20% of the time you'll lose money (to inflation compared to short-term Treasuries), but 20% of the time you'll get 10% annualized or better!
+- Are there any twenty-year periods where the S&P500's real excess returns are <0%? Answer: yes, 10% of them.
+- Are there any forty-year periods where it returned <0%?? Answer: no! All four-decade periods see the S&P500 returning positive real excess returns!
+
+<div id="histogram-cumulative"></div>
+
 > Some nerdy details: Robert Shiller's [online dataset](http://www.econ.yale.edu/~shiller/data.htm) contains monthly numbers for the S&P 500 index's price (dollars per share), dividends (dollars per month), and 10-year Treasury yields, all starting in 1871. I assume you invested $1 at the beginning of each month, reinvesting the dividends that accrued over the previous month. After 480 such buying sessions (for forty year horizons), I calculate the internal rate of return (XIRR) by assuming the entire portfolio was liquidated, which is just an accounting choice to answer the question, "what real return did the S&P 500 yield over this forty year horizon after monthly dollar cost averaging".
 >
 > I then do a similar exercise with Treasuries: every month I assume you put that $1 into a savings account-like vehicle that pays interest monthly at the same rate as the 10-year T-note's. XIRR again computes the internal rate of return, over the same time horizon. *Excess* return is just the S&P's real return minus the Treasuries' real return, and is expressed in a percentage just like any rate of return. Because inflation aflicts stocks and bonds equally, *excess* return is also the ***real*** *excess return*. (You can inspect the TypeScript [code](https://github.com/fasiha/shiller-heat/blob/3e46bdc6d268f9fb6290328373d1a2942f2a2e7e/shiller.ts#L120-L124).)
