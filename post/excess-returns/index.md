@@ -30,6 +30,8 @@ Finally we can convert each histogram above to a *cumulative histogram* below. T
 
 <div id="histogram-cumulative"></div>
 
+(Reminder, you can click on the legends above to turn off and on different lines and see just the horizons you want. You can also zoom, pan, etc.)
+
 > Some nerdy details: Robert Shiller's [online dataset](http://www.econ.yale.edu/~shiller/data.htm) contains monthly numbers for the S&P 500 index's price (dollars per share), dividends (dollars per month), and 10-year Treasury yields, all starting in 1871. I assume you invested $1 at the beginning of each month, reinvesting the dividends that accrued over the previous month. After 480 such buying sessions (for forty year horizons), I calculate the internal rate of return (XIRR) by assuming the entire portfolio was liquidated, which is just an accounting choice to answer the question, "what real return did the S&P 500 yield over this forty year horizon after monthly dollar cost averaging".
 >
 > I then do a similar exercise with Treasuries: every month I assume you put that $1 into a savings account-like vehicle that pays interest monthly at the same rate as the 10-year T-note's. XIRR again computes the internal rate of return, over the same time horizon. *Excess* return is just the S&P's real return minus the Treasuries' real return, and is expressed in a percentage just like any rate of return. Because inflation aflicts stocks and bonds equally, *excess* return is also the ***real*** *excess return*. (You can inspect the TypeScript [code](https://github.com/fasiha/shiller-heat/blob/3e46bdc6d268f9fb6290328373d1a2942f2a2e7e/shiller.ts#L120-L124).)
@@ -38,6 +40,6 @@ Finally we can convert each histogram above to a *cumulative histogram* below. T
 
 (Banner: a crop from "The Monitor and Merrimac: The First Fight Between Ironclads", chromolithograph by Louis Prang & Co., 1886. [Wikimedia](https://commons.wikimedia.org/wiki/File:The_Monitor_and_Merrimac.jpg))
 
-<script src="plotly-basic-1.57.1.min.js" charset="utf-8"></script>
+<script src="plotly-cartesian-2.27.1.min.js" charset="utf-8"></script>
 <script src="index.js" charset="utf-8"></script>
 

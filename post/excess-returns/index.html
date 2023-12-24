@@ -36,6 +36,7 @@
 </ul>
 <div id="histogram-cumulative"></div>
 
+<p>(Reminder, you can click on the legends above to turn off and on different lines and see just the horizons you want. You can also zoom, pan, etc.)</p>
 <blockquote>
 <p>Some nerdy details: Robert Shiller's <a href="http://www.econ.yale.edu/~shiller/data.htm">online dataset</a> contains monthly numbers for the S&amp;P 500 index's price (dollars per share), dividends (dollars per month), and 10-year Treasury yields, all starting in 1871. I assume you invested $1 at the beginning of each month, reinvesting the dividends that accrued over the previous month. After 480 such buying sessions (for forty year horizons), I calculate the internal rate of return (XIRR) by assuming the entire portfolio was liquidated, which is just an accounting choice to answer the question, "what real return did the S&amp;P 500 yield over this forty year horizon after monthly dollar cost averaging".</p>
 <p>I then do a similar exercise with Treasuries: every month I assume you put that $1 into a savings account-like vehicle that pays interest monthly at the same rate as the 10-year T-note's. XIRR again computes the internal rate of return, over the same time horizon. <em>Excess</em> return is just the S&amp;P's real return minus the Treasuries' real return, and is expressed in a percentage just like any rate of return. Because inflation aflicts stocks and bonds equally, <em>excess</em> return is also the <em><strong>real</strong></em> <em>excess return</em>. (You can inspect the TypeScript <a href="https://github.com/fasiha/shiller-heat/blob/3e46bdc6d268f9fb6290328373d1a2942f2a2e7e/shiller.ts#L120-L124">code</a>.)</p>
@@ -44,7 +45,7 @@
 <p><strong>Nota bene</strong> To those seeking to apply <a href="http://pages.stern.nyu.edu/~adamodar/">Dr Damodaran</a>'s <a href="http://pages.stern.nyu.edu/~adamodar/New_Home_Page/datafile/histretSP.html">Historic Returns</a> dataset to check this analysis, please note that the annual returns on thirty-year Treasury bonds appear to be on the price of the bond itself, rather than the bond's yield over that year. For example, T-bonds in 2013 are shown to have -9.1% return but we see from <a href="https://fred.stlouisfed.org/series/DGS30">DGS30 Fed time series</a> that during 2013, the constant maturity rate for thirty-year bonds was between 2.8% and 3.9%. (Damodaran's annual returns for the three-month T-bills seems to jibe well with the <a href="https://fred.stlouisfed.org/series/DGS3MO">Fed's DGS3MO</a> numbers though, and might be an acceptable proxy for the ten-year T-note yields in <a href="http://www.econ.yale.edu/~shiller/data.htm">Shiller</a>'s dataset.)</p>
 </blockquote>
 <p>(Banner: a crop from "The Monitor and Merrimac: The First Fight Between Ironclads", chromolithograph by Louis Prang &amp; Co., 1886. <a href="https://commons.wikimedia.org/wiki/File:The_Monitor_and_Merrimac.jpg">Wikimedia</a>)</p>
-<script src="plotly-basic-1.57.1.min.js" charset="utf-8"></script>
+<script src="plotly-cartesian-2.27.1.min.js" charset="utf-8"></script>
 
 <script src="index.js" charset="utf-8"></script>
 <p>
