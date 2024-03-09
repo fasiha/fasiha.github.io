@@ -177,7 +177,7 @@ it was fabricated if anyone says it did happen. All four probabilities
 here are free in this more general case, since we have historic events
 instead of coin flips:
 
-a.  \\(p(\\text{says H } | \\text{ H}) = p\_\\text{useful}\\) is the
+1.  \\(p(\\text{says H } | \\text{ H}) = p\_\\text{useful}\\) is the
     probability that, given an event H actually happened, that H would
     be recorded. I call this the “probability of usefulness”—if H is the
     event that Christ ate figs for lunch on Passover, 32 C.E., it’s
@@ -186,7 +186,7 @@ a.  \\(p(\\text{says H } | \\text{ H}) = p\_\\text{useful}\\) is the
     \\(p\_\\text{useful}\\) may be closer to 1 for the event H that
     Christ entered Jerusalem days before the crucifixion. It depends on
     what H is.
-b.  \\(p(\\text{H}) = p\_\\text{plausible}\\) is the probability that
+2.  \\(p(\\text{H}) = p\_\\text{plausible}\\) is the probability that
     event H truly happened, independent of whether it was recorded or
     who recorded it. By the complement rule of probability,
     \\(p(\\text{not H}) = 1- p\_\\text{plausible}\\). This is a little
@@ -195,7 +195,7 @@ b.  \\(p(\\text{H}) = p\_\\text{plausible}\\) is the probability that
     dissimilarity, but I take this probability to mean how plausible the
     event H is on general principles, based on what we know about the
     time period, about science, etc.
-c.  Finally, \\(p(\\text{says H } | \\text{ not H}) = p\_\\text{lie}\\),
+3.  Finally, \\(p(\\text{says H } | \\text{ not H}) = p\_\\text{lie}\\),
     is the probability that the event H was fabricated. H here might be
     Luke’s claim that “Christ was born in Bethlehem”. Assuming we know
     that Christ was born in Nazareth (“a tiny hamlet riddled with
