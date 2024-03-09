@@ -1,8 +1,8 @@
 ---
-date: '2017-05-06T14:29:44-04:00'
-description: 'Ahmed Fasih’s corner.'
-title: 'Insight ≠ Numbers'
-banner: 'glen-helen.jpg'
+date: "2017-05-06T14:29:44-04:00"
+description: "Ahmed Fasih’s corner."
+title: "Insight ≠ Numbers"
+banner: "glen-helen.jpg"
 ---
 
 ## About Ahmed Fasih
@@ -17,20 +17,20 @@ Unless otherwise noted, this blog’s contents are dedicated to the public domai
 
 ## Contact
 
-I’m a “he/him” (they/them ok!). 👋! Since this website has absolutely zero visitor tracking or analytics, I won’t know who you are unless you write to me, so please do!
+My pronouns are he/them/any. 👋! Since this website has absolutely zero visitor tracking or analytics, I won’t know who you are unless you write to me, so please do!
 
-Electronic mail me, ***(ahmed) ΑΤ (aldebrn.me)***. 🤙 (Though, nota bene, if you ask me to work at your company, I may not respond—it sometimes takes a lot of energy to figure out how to say “no” and I sometimes can’t; also I might complain about your interview [process](https://gist.github.com/fasiha/496d78a3ce9357cdec0a18f919407d2e))
-
-I toot on <a rel="me" href="https://octodon.social/@22">Mastodon</a>. 🐘
+Electronic mail me, **_(ahmed) ΑΤ (aldebrn.me)_**. 🤙 (Though, nota bene, if you ask me to work at your company, I may not respond—it sometimes takes a lot of energy to figure out how to say “no” and I sometimes can’t; also I might complain about your interview [process](https://gist.github.com/fasiha/496d78a3ce9357cdec0a18f919407d2e))
 
 My code repos on [GitHub](https://github.com/fasiha). 🦉
 
-My code Q&A on [StackOverflow](https://stackoverflow.com/users/500207/ahmed-fasih). 🐒
+My code Q&A on [StackOverflow](https://stackoverflow.com/users/500207/ahmed-fasih), though I’ve slowed down in this era of large language models. 🐒
 
-(I do some [GoodReads](https://www.goodreads.com/user/show/25471547-ahmed) and [Memrise](https://www.memrise.com/user/aldebrn/courses/learning/), and seem to have a [Twitter](https://twitter.com/gratidue) and a [LinkedIn](https://www.linkedin.com/in/ahmed-fasih-006a1b1b3/).)
+I toot on <a rel="me" href="https://octodon.social/@22">Mastodon</a> (currently on hiatus). 🐘
+
+(I do some [GoodReads](https://www.goodreads.com/user/show/25471547-ahmed) and [Memrise](https://www.memrise.com/user/aldebrn/courses/learning/), and seem to have a [LinkedIn](https://www.linkedin.com/in/ahmed-fasih-006a1b1b3/).)
 
 ## Acknowledgements
 
-Pandoc is good. [Modest](https://markdowncss.github.io/modest/) CSS is great. [SVG-Edit](https://github.com/SVG-Edit/svgedit) is amazing. We also use Klipse for interactive code execution, highlight.js for syntax highlighting, JSDOM for server-side rendering as much as we can, and MathJax and mathjax-node-page for equations.
+[Pandoc](https://pandoc.org) is great. [SVG-Edit](https://github.com/SVG-Edit/svgedit) is wow. We also use [Klipse](https://github.com/viebel/klipse) for interactive code execution, [highlight.js](https://highlightjs.org) for syntax highlighting, JSDOM for server-side rendering as much as we can, and [MathJax](https://www.mathjax.org) and mathjax-node-page or [KaTeX](https://katex.org) for equations. [Plotly](https://plotly.com/javascript/) is clutch for plots.
 
 (Image credits: banner—self, at Glen Helen Nature Preserve, Yellow Springs, Ohio, USA. I reserve all rights on this banner image.)

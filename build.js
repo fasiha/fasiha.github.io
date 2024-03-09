@@ -142,7 +142,7 @@ function buildOneMarkdown(meta, prevMeta, nextMeta, metas) {
   var ispost = prevMeta || nextMeta;
 
   const pathToTop = "../".repeat(filepath.split("/").length - 1);
-  const pathToCss = pathToTop + "assets/modest.css";
+  const pathToCss = pathToTop + "assets/theme.css";
 
   var pandocParams = [
     "--wrap=none",
@@ -169,7 +169,8 @@ function buildOneMarkdown(meta, prevMeta, nextMeta, metas) {
       html = window.document.body.innerHTML;
     }
 
-    var head = '<!doctype html>\n<head><meta charset="utf-8" />\n';
+    var head =
+      '<!doctype html>\n<head><meta charset="utf-8" />\n<meta name="viewport" content="width=device-width, initial-scale=1"/>';
     head += `<title>${meta.title}</title>\n`;
     head += `<link href="${filepathToAbspath(
       "atom.xml"

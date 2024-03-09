@@ -104,9 +104,9 @@ Why is that?
 
 KQED has a story, [Why Does The Bay Area Have So Many Microclimates?](https://www.kqed.org/news/11827882/why-does-the-bay-area-have-so-many-microclimates), and it touches on a few factors important to the city proper, but I think it’s straightforward to generalize the physical and marine geography.
 
-Here’s the Bay’s terrain, [texture-shaded](../texshade), superimposed on OpenStreetMap:
+Here’s the Bay’s terrain, [texture-shaded](../texshade), superimposed on OpenStreetMap (see [high-resolution](./bay-600.jpg)):
 
-![The Bay Area: map with terrain; press/hover for annotations; <a href="./bay-600.jpg">high-resolution</a>](./bay-600.jpg) HOVEROVERLAY(overlay.svg) simple
+![The Bay Area: map with terrain; press/hover for annotations](./bay-600.jpg) HOVEROVERLAY(overlay.svg) simple
 
 Long-press or hover over the above map to see my annotations but even without them, you may be able to see why South San Francisco, Daly City, and San Francisco proper all might be chilly, windy, and foggy, while areas south like San Mateo and definity by Palo Alto are warmer and drier: the Coastal Ranges that begin just south of Daly City put some ten kilometers of mountains between the Pacific and the cities along the Bay.
 
