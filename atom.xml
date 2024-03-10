@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://fasiha.github.io/</id>
     <title>Insight≠Numbers</title>
-    <updated>2022-07-07T05:56:04Z</updated>
+    <updated>2024-03-09T03:37:32Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Ahmed Fasih</name>
@@ -13,6 +13,8 @@
     <logo>https://fasiha.github.io/glen-helen.jpg</logo>
     <rights>Unless otherwise noted, released into the public domain under CC0.</rights>
     <category term="app">
+    </category>
+    <category term="code">
     </category>
     <category term="finance">
     </category>
@@ -38,6 +40,18 @@
     </category>
     <category term="weather">
     </category>
+    <entry>
+        <title type="html"><![CDATA[“What do you dislike about programming?”]]></title>
+        <id>https://fasiha.github.io/post/programming-dislikes/</id>
+        <link href="https://fasiha.github.io/post/programming-dislikes/">
+        </link>
+        <updated>2024-03-09T03:37:32Z</updated>
+        <summary type="html"><![CDATA[Someone asked: as someone who programs for work and as a hobby, what do you dislike about programming?]]></summary>
+        <author>
+            <name>Ahmed Fasih</name>
+            <uri>https://fasiha.github.io//#contact</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Hareonna: visualize weather around the world]]></title>
         <id>https://fasiha.github.io/post/hareonna-global-weather/</id>

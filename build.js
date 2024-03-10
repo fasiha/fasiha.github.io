@@ -273,7 +273,7 @@ function metasTopostIndexPromise(metas) {
         (meta) =>
           `- [${meta.title}](${filepathToAbspath(meta.outfile)}) (${shortDate(
             meta.date
-          )}, ${meta.tags.join("/")})\n`
+          )}: ${meta.tags.join(", ")})\n`
       )
       .join("");
   md += `\n(<a href="${filepathToAbspath("atom.xml")}">Feed</a>)`;

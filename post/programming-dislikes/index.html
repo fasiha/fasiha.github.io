@@ -1,0 +1,89 @@
+<!doctype html>
+<head><meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1"/><title>“What do you dislike about programming?”</title>
+<link href="/atom.xml" type="application/atom+xml" rel="alternate" />
+<meta name="description" content="Someone asked: as someone who programs for work and as a hobby, what do you dislike about programming?" />
+<meta name="twitter:card" value="summary">
+<meta property="og:title" content="“What do you dislike about programming?”" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="post/programming-dislikes/index.html" />
+<meta property="og:image" content="https://fasiha.github.io/post/programming-dislikes/durer-melencolia-1.jpg" />
+<meta property="og:description" content="Someone asked: as someone who programs for work and as a hobby, what do you dislike about programming?" />
+<link href="../../assets/theme.css" rel="stylesheet">
+</head>
+<figure class="full-width no-top"><img class="top-banner-image" src="durer-melencolia-1.jpg" width="1372" height="479"></figure>  <ul class="top-nav">
+    <li><a href="/">Blog</a></li>
+    <li><a href="/#contact">Contact</a></li>
+    <li><a href="/atom.xml">Feed</a></li>
+  </ul><h1>“What do you dislike about programming?”</h1><p><em>Updated on Sat, 09 Mar 2024 03:37:32 GMT, tagged with ‘code’.</em></p><p>Someone recently asked me, “You’re someone who enjoys programming a lot, you do it for work and on the side. What do you <em>dislike</em> about programming?”</p>
+<p>I think about this quite a lot. Here are two things I <em>know</em> we are doing wrong.</p>
+<h2 id="1-psychology">§1 psychology</h2>
+<p>There are deep <em>psychological</em> differences between programmers—even those working in the same niche—and not understanding these leads to a lot of waste and frustration.</p>
+<p>In 2021 Jan 30, <a href="https://mastodon.social/@danluu">Dan Luu</a> shared a thread by <a href="https://mstdn.social/@marick">Brian Marick</a> a few days earlier that radicalized me into this position. Marick wrote:</p>
+<blockquote>
+<p>‘I’d really really like to sit side by side with someone fluent in repl-based development and compare it to what I do. It <em>seems</em> to me that what I’m doing is comparable to using the repl, except more structured. Which is useful to me because of my bad memory. [After watching the video…] Interesting. My main conclusion is that you’re a better programmer than I am: you can hold a lot more, um, “nested goals” in your head than I can, and are less reliant on names to counteract a short goal stack and bad short-term memory. For example, I would have needed to break out the two anonymous functions in <code>next-state</code> into named functions, just to keep my intentions clear.’</p>
+</blockquote>
+<p>Dan reflects,</p>
+<blockquote>
+<p>‘I find this thread [above] interesting because it’s one of the few times I’ve seen a public discussion of programming style drill down to differences in skills or aptitudes. When I’ve compared notes with friends, it often comes down to these. … People with all of:</p>
+<ol type="1">
+<li>large working memory</li>
+<li>fast typing</li>
+<li>fast bulk editing (e.g., via emacs macros)</li>
+</ol>
+<p>often don’t mind high-boilerplate languages and often don’t find “I could write that in 100 LOC in language X” compelling. They’ll just write 500 LOC.’ (Original on, ugh, <a href="https://twitter.com/danluu/status/1355316226730287105">Twitter</a>)</p>
+</blockquote>
+<p>(Translations for the civilians: “REPL” is “read-eval-print loop” (<a href="https://realpython.com/python-repl/">Real Python</a> has a nice explanation); “emacs” is a powerful text editor; “LOC” is “lines of code”.)</p>
+<p>This crystallized something I’d noticed repeatedly but didn’t have words to describe:</p>
+<ol type="1">
+<li>there are things I <em>need</em> to be a productive coder which <em>others</em> absolutely don’t need, and those people amaze–frighten me. And vice versa,</li>
+<li><em>others</em> can ask me for things I don’t think matter but they absolutely need to be productive.</li>
+</ol>
+<p>Viz., I programmed for years in dynamic-typed languages like plain JavaScript, pre-<code>typing</code> Python, Clojure, etc., and, reader, I genuinely have no idea how I managed. These days, if my little throwaway <code>.js</code> script gets a little too long, I get heartburn—a digestive warning of upcoming stress. I <em>have</em> to have static types even to do relatively simple tasks—to write relatively simple functions—because I seem to have such limited working memory. That is, I <em>need</em> offload a ton of cognitive bookkeeping to the compiler, in ways that other developers just don’t. Marick’s marveling above at people who can “hold a lot more, um, nested goals” in their heads is something I feel repeatedly (especially in interviews! I insist on doing interviews—where I want a job—in TypeScript).</p>
+<p>But also viz., I’ve worked with developers who absolutely need code style and lint rules to be rigorously enforced—who are stressed out and less productive by semantically-equivalent-but-different syntactic convention (TypeScript example: <code>Array&lt;string&gt;</code> vs <code>string[]</code>). To me, encumbering a codebase with strict formatters and linters is a burden, until I realize that this is equivalent to my teammates with large working memories who are in turn encumbered by me needing static types (TypeScript, <code>typing</code> in Python, etc.).</p>
+<p>It’s painfully obvious that we need more studies to elucidate the various dimensions along which programmers’ psychologies vary—we treat these differences as quirks or failures, to our detriment. Until then, indulge your teams’ requests, even when you personally wouldn’t benefit. Build a psychologically-safe environment where you and your teammates can ask for what they need without fearing ridicule or suspicion.</p>
+<h2 id="2-difficulty">§2 difficulty</h2>
+<p>Internet sage Patrick McKenzie was a guest on Bloomberg’s <em>Odd Lots</em> podcast with Tracy Alloway and Joe Weisenthal, <a href="https://www.bloomberg.com/news/articles/2023-01-26/odd-lots-podcast-how-software-explains-the-southwest-airlines-outage">“Why Corporate America Still Runs on Ancient Software That Breaks”</a> (2023 Jan 26) and, in the inevitable internet banter that followed, said something that has stuck with me:</p>
+<blockquote>
+<p>“We have not written the first basis point of all software yet.” (<a href="https://twitter.com/patio11/status/1618572775932985346">Twitter</a>)</p>
+</blockquote>
+<details>
+<summary>Full excerpt</summary>
+
+<blockquote>
+<p>A potentially controversial observation: despite the news cycle vis tech layoffs, and acknowledging individuals suffered during them, the job market over the next 5 years will be ~almost best ever for software. (<a href="https://twitter.com/patio11/status/1618572445803507712#m">Twitter</a>)</p>
+<p>This is directly downstream of the ongoing refactoring of society, including at large organizations as we mostly talked about, to organize how people collaborate together over a software substrate.</p>
+<p>We have not written the first basis point of all software yet. (<a href="https://twitter.com/patio11/status/1618572775932985346">Twitter</a>)</p>
+</blockquote>
+</details>
+
+<p>A basis point is one percent of one percent (0.0001).</p>
+<p>This is a controversial opinion. Plenty of thoughtful people I’ve asked about this disagree with McKenzie, some holding that the <em>majority</em> of software that humanity will ever write has already been written.</p>
+<p>But though I can’t convince anyone of it, I’m with McKenzie. When I look at how badly most software works, how much better it could work, and how many iterations it takes to get to that better place, it’s easy to convince myself at least that humanity has need of a lot more code than has been written.</p>
+<p><em>And this terrifies me</em>, because code is <em>too damn hard to write</em>.</p>
+<p>This isn’t a profound statement about software correctness or complexity or whatever that a wiser person would invoke. Just. In my day-to-day work as a software maker (in Joseph Gentle’s <a href="https://josephg.com/blog/3-tribes/">“three tribes”</a> notion), I spend so much time on stuff that’s needlessly difficult, confusing, or verbose it makes me despair that anyone less steeped in that world could manage it.</p>
+<p>So I find myself thinking, if it’s this hard to write it, how are we ever going to get to the oodles more we urgently need?</p>
+<p>I have no doubt that there are much better ways to write code and build systems that remain to be discovered. Experiments like <a href="http://witheve.com">Eve</a> and <a href="https://darklang.com/classic">Darklang Classic</a>, tools like structured editing, physical interfaces like AR glasses (which my friend <a href="https://hachyderm.io/@LauraLangdon/110880090438291077">Laura Langdon</a> put me onto and which I use extensively while coding), … all these fire me up because odds are one of these will be the 10× factor we don’t even realize we need.</p>
+<p>Because, this finding is controversial: a lot of people I talk to think our tools are just fine, or need just quantitative improvement and not qualitative revolution. If it wasn’t for some precious naysayers, I’d doubt myself but:</p>
+<ul>
+<li>Bret Victor: “When I want to create something in software, there’s this initial layer of disgust that I have to push through. … There’s a pretty strong conviction that that’s the wrong way of doing things.” (<a href="https://www.theatlantic.com/technology/archive/2017/09/saving-the-world-from-code/540393/">The Atlantic</a>, worth reading! Includes research by Eve author Chris Granger)</li>
+<li>Alan Kay has this memorable conversation in an Ask Me Anything:
+<ul>
+<li>Someone: ‘Do we “really” need more programming languages?’</li>
+<li>Kay: ‘We could use a few “good ones” (meaning ones that really are about the realities, needs and scales of the 21st century).’</li>
+<li>Someone: ‘Could you list top 3 good ones as per your opinion?’</li>
+<li>Kay: ‘I meant, we could “use three good ones”, not that I knew of three…’ (<a href="https://news.ycombinator.com/item?id=11940015">Hacker News</a>, 2016 Jun 20)</li>
+</ul></li>
+</ul>
+<p>And this dislike isn’t even about <em>teaching</em> programming, which we will <em>not</em> be getting into today—though Alexis King has a <a href="https://gist.github.com/fasiha/64ce82e1dd109430dad70285c6b81693">wonderful thread</a> about that. Teaser: “Real languages are industrial-strength tools designed to be used by skilled hobbyists and professionals. They are informed by real-world requirements and constraints and include pragmatic compromises rife with subtleties. They do not belong in any introductory course.”</p>
+<hr />
+<p>That’s two things that I—someone who loves to program and haven’t been able to stop doing it for more than a few days for twenty+ years—dislike about it.</p>
+<p>§1: We have no idea what all we need to be able do this task.</p>
+<p>And §2: it’s too damn hard to do it.</p>
+<p>Now, for the good news. I haven’t mentioned “LLM” or “AI” yet, and I won’t after this, but to me the rise of these tools is a stirring reminder that the above situation is <em>impermanent</em>.</p>
+<p>So other than the exhortation above—to be kind to yourself and to each other, to observe yourself and ask for what you need—I would ask that you stay open to the possibility of these difficulties ameliorating. Here’s to better times to come!</p>
+<hr />
+<p>(Banner: crop from Albrecht Dürer’s <em>Melencolia I</em>, 1514, <a href="https://commons.wikimedia.org/wiki/File:Albrecht_Dürer_-_Melencolia_I_-_Google_Art_Project_(_AGDdr3EHmNGyA).jpg">Wikicommons</a>)</p>
+<p>
+<small>Previous: <a href="/post/hareonna-global-weather/">Hareonna: visualize weather around the world</a><br></small>
+</p>
