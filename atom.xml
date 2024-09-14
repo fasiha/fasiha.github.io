@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://fasiha.github.io/</id>
     <title>Insight≠Numbers</title>
-    <updated>2024-03-09T03:37:32Z</updated>
+    <updated>2024-09-14T04:22:10Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Ahmed Fasih</name>
@@ -30,16 +30,32 @@
     </category>
     <category term="probability">
     </category>
+    <category term="review">
+    </category>
     <category term="risk">
     </category>
     <category term="study">
     </category>
     <category term="tech">
     </category>
+    <category term="tv">
+    </category>
     <category term="uncertainty">
     </category>
     <category term="weather">
     </category>
+    <entry>
+        <title type="html"><![CDATA[Recentered storytelling: a review of Motherland: Fort Salem]]></title>
+        <id>https://fasiha.github.io/post/motherland/</id>
+        <link href="https://fasiha.github.io/post/motherland/">
+        </link>
+        <updated>2024-09-14T04:22:10Z</updated>
+        <summary type="html"><![CDATA[By decentering men and making powerful women the focus of its society, Motherland: Fort Salem has found a storytelling winning formula]]></summary>
+        <author>
+            <name>Ahmed Fasih</name>
+            <uri>https://fasiha.github.io//#contact</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[“What do you dislike about programming?”]]></title>
         <id>https://fasiha.github.io/post/programming-dislikes/</id>

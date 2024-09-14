@@ -205,7 +205,7 @@ function buildOneMarkdown(meta, prevMeta, nextMeta, metas) {
       head += topnav();
     }
 
-    head += headline(meta.title);
+    head += headline(meta.titleHtml || meta.title);
 
     if (ispost) {
       head += subline(meta);
