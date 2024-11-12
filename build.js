@@ -352,7 +352,7 @@ function social(url, title, description, banner, outfile) {
 <meta name="twitter:card" value="summary">
 <meta property="og:title" content="${title}" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="${url}" />
+<meta property="og:url" content="${filepathToURL(outfile)}" />
 <meta property="og:image" content="${filepathToURL(outfile)}${banner}" />
 <meta property="og:description" content="${description}" />\n`;
 }
