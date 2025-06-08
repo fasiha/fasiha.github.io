@@ -25,9 +25,9 @@ My code repos on [GitHub](https://github.com/fasiha). 🦉
 
 My code Q&A on [StackOverflow](https://stackoverflow.com/users/500207/ahmed-fasih), though I’ve slowed down in this era of large language models. 🐒
 
-I toot on <a rel="me" href="https://octodon.social/@22">Mastodon</a> (currently on hiatus). 🐘
+I toot on <a rel="me" href="https://sfba.social/@22">Mastodon</a> (though currently on hiatus) and I take care of [PleaseCaption Bot](https://hachyderm.io/@PleaseCaptionBot). 🐘
 
-(I do some [GoodReads](https://www.goodreads.com/user/show/25471547-ahmed) and [Memrise](https://www.memrise.com/user/aldebrn/courses/learning/), and seem to have a [LinkedIn](https://www.linkedin.com/in/ahmed-fasih-006a1b1b3/).)
+(I do some [GoodReads](https://www.goodreads.com/user/show/25471547-ahmed) and seem to have a [LinkedIn](https://www.linkedin.com/in/ahmed-fasih-006a1b1b3/).)
 
 ## Acknowledgements
 
