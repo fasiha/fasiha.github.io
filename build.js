@@ -148,7 +148,7 @@ function buildOneMarkdown(meta, prevMeta, nextMeta, metas) {
     "--wrap=none",
     "--filter",
     "filter.js",
-    "--no-highlight",
+    "--syntax-highlighting=none",
     "-t",
     "html5",
     "-f",
