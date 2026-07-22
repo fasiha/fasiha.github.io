@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://fasiha.github.io/</id>
     <title>Insight≠Numbers</title>
-    <updated>2024-09-14T04:22:10Z</updated>
+    <updated>2026-07-19T04:35:00Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Ahmed Fasih</name>
@@ -44,6 +44,18 @@
     </category>
     <category term="weather">
     </category>
+    <entry>
+        <title type="html"><![CDATA[Book review: “Ghost-Eye”]]></title>
+        <id>https://fasiha.github.io/post/ghost-eye/</id>
+        <link href="https://fasiha.github.io/post/ghost-eye/">
+        </link>
+        <updated>2026-07-19T04:35:00Z</updated>
+        <summary type="html"><![CDATA[From Amitav Ghosh’s latest novel to Jung, ancient Iran, and Periclean Athens]]></summary>
+        <author>
+            <name>Ahmed Fasih</name>
+            <uri>https://fasiha.github.io//#contact</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Recentered storytelling: a review of Motherland: Fort Salem]]></title>
         <id>https://fasiha.github.io/post/motherland/</id>
