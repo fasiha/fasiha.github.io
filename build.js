@@ -333,8 +333,30 @@ function subline(meta) {
 }
 
 async function banner(url, parentPath) {
-  const [w, h] = await imageToSize((parentPath + "/" + url).replace(/^\//, ""));
-  return `<figure class="full-width no-top"><img class="top-banner-image" src="${url}" width="${w}" height="${h}"></figure>`;
+  const fullPath = (parentPath + "/" + url).replace(/^\//, "");
+  const [w, h] = await imageToSize(fullPath);
+
+  const urlWithout1x = url.replace(/(-1x)?\.(jpg|jpeg|png|webp)$/i, '.$2');
+  const url1x = urlWithout1x.replace(/(\.[^.]+)$/, '-1x$1');
+  const fullPath1x = (parentPath + "/" + url1x).replace(/^\//, "");
+
+  await ensureImage1x(fullPath, fullPath1x);
+
+  const srcset = `${url1x} 1x, ${urlWithout1x} 2x`;
+  return `<figure class="full-width no-top"><img class="top-banner-image" src="${url1x}" srcset="${srcset}" width="${w}" height="${h}"></figure>`;
+}
+
+async function ensureImage1x(imagePath, image1xPath) {
+  try {
+    await fs.statAsync(image1xPath);
+  } catch (e) {
+    try {
+      await spawnPromise(spawn("convert", [imagePath, "-resize", "50%", image1xPath]));
+      console.log(`Generated 1x variant: ${image1xPath}`);
+    } catch (err) {
+      console.error(`Failed to generate 1x variant for ${imagePath}:`, err.message);
+    }
+  }
 }
 
 function imageToSize(imagepath) {
