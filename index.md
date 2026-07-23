@@ -7,7 +7,7 @@ banner: "glen-helen.jpg"
 
 ## About Ahmed Fasih
 
-The blog title comes from Professor Richard Hamming’s motto, “The purpose of computation is insight, not numbers” ([SIAM](http://www.siam.org/news/news.php?id=893)).
+The blog title comes from Professor Richard Hamming’s motto, “The purpose of computation is insight, not numbers” ([SIAM](https://web.archive.org/web/20070716000005/http://www.siam.org/news/news.php?id=893)).
 
 I sling JavaScript, TypeScript, Python, C, and friends, for fun and profit. After enjoying programming for years, I discovered applied math in mid-undergrad, and through various adventures in grad school and industry, I wound up learning a lot about signal processing, machine learning, and scientific computing.
 
